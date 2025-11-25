@@ -1,4 +1,4 @@
-import {ThemeToggle} from "@/components/theme-toggle";
+"use client"
 import {Button} from "@/components/ui/button";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {
@@ -7,33 +7,18 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import {
-    NavigationMenu,
-    NavigationMenuLink,
-    NavigationMenuList,
-} from "@/components/ui/navigation-menu"
 import Image from "next/image";
-import ContactDialog from "@/app/components/ContactDialog";
+import {useRouter} from "next/navigation";
+import {useTranslations} from "use-intl";
 
 export default function Home() {
+    const router = useRouter();
+    const redirectToRecommendations = () => {
+        router.push("/recommendations");
+    }
+    const t = useTranslations('HomePage');
     return (
         <div className="w-full lg:mx-auto h-full">
-            <div className="flex lg:flex-row flex-col w-full p-4 lg:justify-between justify-center border-b-1 border-[#2F2F2F]">
-                <div className="flex justify-center items-center lg:justify-start lg:items-start w-full lg:w-1/4 font-mono">&lt;brunohf.dev/&gt;</div>
-                <div className="w-full justify-center items-center flex lg:gap-4 gap-0 lg:flex-row flex-col">
-                    <NavigationMenu>
-                        <NavigationMenuList>
-                            <NavigationMenuLink className="font-bold text-md font-mono">About me</NavigationMenuLink>
-                            <NavigationMenuLink className="font-bold text-md font-mono">Portfolio</NavigationMenuLink>
-                            <NavigationMenuLink className="font-bold text-md font-mono">Blog</NavigationMenuLink>
-                        </NavigationMenuList>
-                    </NavigationMenu>
-                </div>
-                <div className="flex justify-center lg:flex-row lg:gap-4 gap-0 w-full lg:w-1/4 lg:justify-end">
-                    <ThemeToggle/>
-                    <ContactDialog/>
-                </div>
-            </div>
             <div className="flex flex-col lg:flex-row justify-center items-center sm:w-full lg:w-5/6 mx-auto">
                 <div className="md:w-1/4 sm:w-full h-full flex justify-end">
                     <div className="p-4 flex flex-col w-full items-end">
@@ -50,8 +35,7 @@ export default function Home() {
                                 <div className="text-center flex flex-col items-center">
                                     <h4 className="text-1xl font-bold dark:text-neutral-200">Bruno Henrique
                                         Freiberger</h4>
-                                    <h5 className="dark:text-neutral-200">(Dedicated Full-Stack Engineer and Problem
-                                        Solver)</h5>
+                                    <h5 className="dark:text-neutral-200">({t('profile.subtitle')})</h5>
                                 </div>
                             </CardContent>
                         </Card>
@@ -59,7 +43,7 @@ export default function Home() {
                         <Card
                             className="w-full transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] mt-4">
                             <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
-                                <CardTitle>Social Media</CardTitle>
+                                <CardTitle>{t('general.social_media')}</CardTitle>
                             </CardHeader>
                             <CardContent className="text-center text-neutral-400">
                                 <div className="flex flex-col gap-4">
@@ -95,7 +79,7 @@ export default function Home() {
                         <Card
                             className="w-full transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] mt-4">
                             <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
-                                <CardTitle>Tech Stack</CardTitle>
+                                <CardTitle>{t('general.tech_stack')}</CardTitle>
                             </CardHeader>
                             <CardContent className="text-center text-neutral-400">
                                 <div className="py-4 text-center">
@@ -136,28 +120,28 @@ export default function Home() {
                             className="text-[#08E0EC]">Engineer</span></h1>
 
                         <h3 className="font-mono pt-4">(Java, Spring Boot, JavaScript, React, Next.js, Node,
-                            Golang, Angular)</h3>
+                            Golang, Angular)
+                        </h3>
                         <br/>
-                        <span className="font-mono">
-                                    Experienced Full-Stack Developer with strong expertise in Java (Spring Boot) and JavaScript (Angular, React, Node.js). Passionate about building scalable, reliable, and customer-centric solutions that deliver real business impact.
-                                </span>
+                        <span className="font-mono"> {t('profile.description')} </span>
                         <br/>
                         <div className="flex justify-center items-center gap-4">
-                            <Button variant="outline" className="font-mono">See my recommendations</Button>
-                            <Button className="bg-[#08E0EC] text-white font-bold font-mono">Download CV</Button>
+                            <Button onClick={() => redirectToRecommendations()} variant="outline" className="font-mono">See
+                                my recommendations</Button>
+                            <Button
+                                className="bg-[#08E0EC] text-white font-bold font-mono">{t('general.download_cv')}</Button>
                         </div>
-                        <h1 className="text-2xl font-bold pt-20 dark:text-neutral-400">Core Strengths</h1>
+                        <h1 className="text-2xl font-bold pt-20 dark:text-neutral-400">{t('general.core_strengths')}</h1>
                         <div className="flex flex-col lg:flex-row justify-center items-center gap-4 py-4">
                             <Card
                                 className="w-full lg:w-1/3 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
                                 <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
                                     <Image src="/images/strengths/dev-code.svg" alt="java-logo" width={80}
                                            height={80}/>
-                                    <CardTitle>10+ Years of Experience</CardTitle>
+                                    <CardTitle>{t('profile.exp_card.title')}</CardTitle>
                                 </CardHeader>
                                 <CardContent className="text-center text-neutral-400">
-                                    <p>Experienced developer with over a decade of hands-on work across diverse
-                                        technologies and industries.</p>
+                                    <p>{t('profile.exp_card.description')}</p>
                                 </CardContent>
                             </Card>
                             <Card
@@ -165,11 +149,10 @@ export default function Home() {
                                 <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
                                     <Image src="/images/strengths/customer-centric.svg" alt="java-logo"
                                            width={80} height={80}/>
-                                    <CardTitle>Customer Centric</CardTitle>
+                                    <CardTitle>{t('profile.cc_card.title')}</CardTitle>
                                 </CardHeader>
                                 <CardContent className="text-center text-neutral-400">
-                                    <p>Focused on understanding real user needs and crafting impactful,
-                                        meaningful solutions that truly make a difference.</p>
+                                    <p>{t('profile.cc_card.description')}</p>
                                 </CardContent>
                             </Card>
                             <Card
@@ -177,11 +160,10 @@ export default function Home() {
                                 <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
                                     <Image src="/images/strengths/problem-solver.svg" alt="java-logo" width={80}
                                            height={80}/>
-                                    <CardTitle>Problem Solver</CardTitle>
+                                    <CardTitle>{t('profile.ps_card.title')}</CardTitle>
                                 </CardHeader>
                                 <CardContent className="text-center text-neutral-400">
-                                    <p>Passionate about solving complex challenges with creativity,
-                                        adaptability, and the right tools for each situation.</p>
+                                    <p>{t('profile.ps_card.description')}</p>
                                 </CardContent>
                             </Card>
                         </div>

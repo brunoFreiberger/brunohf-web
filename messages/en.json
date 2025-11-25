@@ -1,0 +1,35 @@
+{
+  "HomePage": {
+    "profile": {
+      "subtitle": "Dedicated Full-Stack Engineer and Problem Solver",
+      "description": "Experienced Full-Stack Developer with strong expertise in Java (Spring Boot) and JavaScript (Angular, React, Node.js). Passionate about building scalable, reliable, and customer-centric solutions that deliver real business impact.",
+      "exp_card": {
+        "title": "10+ Years of Experience",
+        "description": "Experienced developer with over a decade of hands-on work across diverse technologies and industries."
+      },
+      "cc_card": {
+        "title": "Customer Centric",
+        "description": "Focused on understanding real user needs and crafting impactful, meaningful solutions that truly make a difference."
+      },
+      "ps_card": {
+        "title": "Problem Solver",
+        "description": "Passionate about solving complex challenges with creativity, adaptability, and the right tools for each situation."
+      }
+    },
+    "general": {
+      "social_media": "Social Media",
+      "tech_stack": "Tech Stack",
+      "download_cv": "Download CV",
+      "core_strengths": "Core Strengths"
+    }
+  },
+  "Navbar": {
+    "about_me": "About Me",
+    "portfolio": "Portfolio",
+    "blog": "Blog"
+  },
+  "Contact": {
+    "contact_me": "Contact Me",
+    "description": "Send me an email, I will reply as soon as possible."
+  }
+}

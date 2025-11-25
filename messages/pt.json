@@ -1,0 +1,35 @@
+{
+  "HomePage": {
+    "profile": {
+      "subtitle": "Engenheiro Full-Stack Dedicado e Focado em Resolução de Problemas",
+      "description": "Desenvolvedor Full-Stack com ampla experiência em Java (Spring Boot) e JavaScript (Angular, React, Node.js). Apaixonado por criar soluções escaláveis, confiáveis e centradas no usuário, sempre focadas em gerar resultados reais para o negócio.",
+      "exp_card": {
+        "title": "Mais de 10 Anos de Experiência",
+        "description": "Profissional com mais de uma década de prática em diferentes tecnologias e setores."
+      },
+      "cc_card": {
+        "title": "Foco no Cliente",
+        "description": "Comprometido em entender as necessidades reais dos usuários e desenvolver soluções relevantes, eficazes e que realmente fazem a diferença."
+      },
+      "ps_card": {
+        "title": "Resolução de Problemas",
+        "description": "Apaixonado por enfrentar desafios complexos com criatividade, adaptabilidade e escolhendo sempre as ferramentas mais adequadas para cada situação."
+      }
+    },
+    "general": {
+      "social_media": "Redes Sociais",
+      "tech_stack": "Tecnologias",
+      "download_cv": "Baixar CV",
+      "core_strengths": "Principais Competências"
+    }
+  },
+  "Navbar": {
+    "about_me": "Sobre mim",
+    "portfolio": "Portfolio",
+    "blog": "Blog"
+  },
+  "Contact": {
+    "contact_me": "Entre em contato",
+    "description": "Me envie um e-mail, responderei o mais rápido possível."
+  }
+}
