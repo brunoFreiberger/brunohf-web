@@ -19,17 +19,115 @@
     "general": {
       "social_media": "Redes Sociais",
       "tech_stack": "Tecnologias",
+      "see_recommendations": "Veja minhas recomendações",
       "download_cv": "Baixar CV",
       "core_strengths": "Principais Competências"
     }
   },
   "Navbar": {
+    "home": "Início",
     "about_me": "Sobre mim",
     "portfolio": "Portfolio",
     "blog": "Blog"
   },
   "Contact": {
     "contact_me": "Entre em contato",
-    "description": "Me envie um e-mail, responderei o mais rápido possível."
+    "description": "Me envie um e-mail, responderei o mais breve possível."
+  },
+  "Blog": {
+    "back": "Voltar"
+  },
+  "AboutMe": {
+    "title": "Sobre mim",
+    "sections": {
+      "introduction": {
+        "title": "Quem sou eu",
+        "text": "Sou Bruno Henrique Freiberger, desenvolvedor de software com mais de nove anos de experiência em projetos full-stack. Tenho foco principal em Java (Spring) e JavaScript (Angular), atuando no desenvolvimento de soluções robustas, escaláveis e voltadas para performance. Também possuo vivência com diversas outras tecnologias e práticas de DevOps, contribuindo de ponta a ponta no ciclo de desenvolvimento."
+      },
+      "experience": {
+        "title": "Experiência profissional",
+        "items": [
+          {
+            "company": "Meta",
+            "role": "Software Engineer",
+            "period": "maio de 2023 - presente",
+            "description": "Atuação no desenvolvimento e manutenção de soluções corporativas, trabalhando com boas práticas de engenharia de software, arquitetura e colaboração entre equipes."
+          },
+          {
+            "company": "Qualirede",
+            "role": "Software Engineer",
+            "period": "janeiro de 2023 - maio de 2023",
+            "description": "Contribuição no desenvolvimento de funcionalidades e melhorias em sistemas voltados para gestão de saúde."
+          },
+          {
+            "company": "Pulsati",
+            "role": "Senior Software Engineer",
+            "period": "maio de 2021 - dezembro de 2022",
+            "description": "Desenvolvimento de soluções para operadoras de planos de saúde, com foco em estabilidade, escalabilidade e evolução contínua do produto."
+          },
+          {
+            "company": "Supero Tecnologia",
+            "role": "Senior Software Developer",
+            "period": "abril de 2020 - maio de 2021",
+            "description": "Atuação terceirizada na Philips Clinical Informatics. Desenvolvi funcionalidades como um Query Builder em Java e Oracle, permitindo que profissionais de saúde criassem consultas de forma visual, sem necessidade de conhecimento em SQL."
+          },
+          {
+            "company": "Senior Sistemas",
+            "role": "Senior Full Stack Developer",
+            "period": "setembro de 2019 - março de 2020",
+            "description": "Criação e evolução de funcionalidades em software voltado ao agronegócio, garantindo qualidade e manutenção contínua."
+          },
+          {
+            "company": "AMcom",
+            "role": "Senior Full Stack Developer",
+            "period": "julho de 2017 - setembro de 2019",
+            "description": "Atuação em fábrica de software e outsourcing, contribuindo em projetos para clientes como Philips, Senior Sistemas, FIESC e Lincros."
+          },
+          {
+            "company": "Windi Soluções",
+            "role": "Full Stack Developer",
+            "period": "março de 2017 - julho de 2017",
+            "description": "Implementação de melhorias e novas funcionalidades no sistema de gestão de lojas de veículos Altimus."
+          },
+          {
+            "company": "Teclógica",
+            "role": "Full Stack Developer",
+            "period": "março de 2014 - dezembro de 2016",
+            "description": "Desenvolvimento e manutenção do sistema MOBUSS Construção, utilizado no setor de construção civil."
+          }
+        ]
+      },
+      "skills": {
+        "title": "Competências",
+        "items": ["Java", "Spring", "Angular", "JavaScript", "SQL", "DevOps"]
+      },
+      "languages": {
+        "title": "Idiomas",
+        "items": [
+          { "language": "Português", "level": "Nativo" },
+          { "language": "Inglês", "level": "Profissional" }
+        ]
+      },
+      "education": {
+        "title": "Formação acadêmica",
+        "items": [
+          {
+            "institution": "Universidade Regional de Blumenau",
+            "degree": "Bacharelado em Ciência da Computação",
+            "period": "2014 - 2019"
+          },
+          {
+            "institution": "Entra21 Blusoft",
+            "degree": "Desenvolvimento Web",
+            "period": "2012 - 2013"
+          },
+          {
+            "institution": "Cedup Hermann Hering",
+            "degree": "Técnico em Desenvolvimento de Software integrado ao Ensino Médio",
+            "period": "2009 - 2013"
+          }
+        ]
+      }
+    }
   }
 }

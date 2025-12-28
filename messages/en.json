@@ -19,11 +19,13 @@
     "general": {
       "social_media": "Social Media",
       "tech_stack": "Tech Stack",
+      "see_recommendations": "See my recommendations",
       "download_cv": "Download CV",
       "core_strengths": "Core Strengths"
     }
   },
   "Navbar": {
+    "home": "Home",
     "about_me": "About Me",
     "portfolio": "Portfolio",
     "blog": "Blog"
@@ -31,5 +33,101 @@
   "Contact": {
     "contact_me": "Contact Me",
     "description": "Send me an email, I will reply as soon as possible."
+  },
+  "Blog": {
+    "back": "Back"
+  },
+  "AboutMe": {
+    "title": "About me",
+    "sections": {
+      "introduction": {
+        "title": "Who I am",
+        "text": "I am Bruno Henrique Freiberger, a software developer with over nine years of experience in full-stack development. My core expertise lies in Java (Spring) and JavaScript (Angular), delivering scalable, high-quality solutions. I also have hands-on experience with a wide range of technologies and DevOps practices, contributing across the entire development lifecycle."
+      },
+      "experience": {
+        "title": "Professional experience",
+        "items": [
+          {
+            "company": "Meta",
+            "role": "Software Engineer",
+            "period": "May 2023 - Present",
+            "description": "Development and maintenance of enterprise solutions, applying software engineering best practices, modern architecture and cross-team collaboration."
+          },
+          {
+            "company": "Qualirede",
+            "role": "Software Engineer",
+            "period": "January 2023 - May 2023",
+            "description": "Contributed to the enhancement and development of systems focused on healthcare management."
+          },
+          {
+            "company": "Pulsati",
+            "role": "Senior Software Engineer",
+            "period": "May 2021 - December 2022",
+            "description": "Developed healthcare solutions for insurance providers, focusing on product evolution, reliability and performance."
+          },
+          {
+            "company": "Supero Tecnologia",
+            "role": "Senior Software Developer",
+            "period": "April 2020 - May 2021",
+            "description": "Worked outsourced at Philips Clinical Informatics. Developed features such as a visual Query Builder in Java and Oracle, enabling healthcare professionals to build queries without SQL knowledge."
+          },
+          {
+            "company": "Senior Sistemas",
+            "role": "Senior Full Stack Developer",
+            "period": "September 2019 - March 2020",
+            "description": "Developed and enhanced features in agribusiness software, ensuring quality and continuous improvement."
+          },
+          {
+            "company": "AMcom",
+            "role": "Senior Full Stack Developer",
+            "period": "July 2017 - September 2019",
+            "description": "Worked in a software factory and on outsourcing projects for clients such as Philips, Senior Sistemas, FIESC and Lincros."
+          },
+          {
+            "company": "Windi Soluções",
+            "role": "Full Stack Developer",
+            "period": "March 2017 - July 2017",
+            "description": "Implemented new features and system improvements in the Altimus vehicle dealership management platform."
+          },
+          {
+            "company": "Teclógica",
+            "role": "Full Stack Developer",
+            "period": "March 2014 - December 2016",
+            "description": "Developed and maintained MOBUSS Construção, a construction management system used across the civil construction sector."
+          }
+        ]
+      },
+      "skills": {
+        "title": "Skills",
+        "items": ["Java", "Spring", "Angular", "JavaScript", "SQL", "DevOps"]
+      },
+      "languages": {
+        "title": "Languages",
+        "items": [
+          { "language": "Portuguese", "level": "Native" },
+          { "language": "English", "level": "Professional working proficiency" }
+        ]
+      },
+      "education": {
+        "title": "Education",
+        "items": [
+          {
+            "institution": "FURB - Universidade Regional de Blumenau",
+            "degree": "Bachelor's Degree in Computer Science",
+            "period": "2014 - 2019"
+          },
+          {
+            "institution": "Entra21 Blusoft",
+            "degree": "Web Development",
+            "period": "2012 - 2013"
+          },
+          {
+            "institution": "Cedup Hermann Hering",
+            "degree": "Technical Course in Software Development integrated with High School",
+            "period": "2009 - 2013"
+          }
+        ]
+      }
+    }
   }
 }
