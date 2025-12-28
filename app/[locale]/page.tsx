@@ -26,7 +26,7 @@ export default function Home() {
                             <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
                                 <Avatar className="h-24 w-24 border-2">
                                     <AvatarImage
-                                        src="https://media.licdn.com/dms/image/v2/D4D03AQH3J9KWmsMEhw/profile-displayphoto-scale_200_200/B4DZpmaZWVJUAY-/0/1762654788361?e=1764806400&v=beta&t=LKWEGhLmgKwiRSAZm2RGrlyFTWxyonjBsRdRV9XQy4k"
+                                        src="/images/1762654788361.jpeg"
                                         alt="@shadcn"/>
                                     <AvatarFallback>BHF</AvatarFallback>
                                 </Avatar>
@@ -85,15 +85,19 @@ export default function Home() {
                                 <div className="py-4 text-center">
                                     <div className="flex justify-center gap-4 py-4">
                                         <Image src="/images/java-logo.svg" alt="java-logo" width={60} height={60}/>
-                                        <Image src="/images/spring-logo.svg" alt="java-logo" width={60}
+                                        <Image src="/images/spring-logo.svg" alt="spring-logo" width={60}
                                                height={60}/>
-                                        <Image src="/images/node-logo.svg" alt="java-logo" width={60} height={60}/>
+                                        <Image src="/images/node-logo.svg" alt="node-logo" width={60} height={60}/>
+                                        <Image src="/images/datadog-logo.svg" alt="datadog-logo" width={60}
+                                               height={60}/>
                                     </div>
                                     <div className="flex justify-center gap-4">
                                         <Image src="/images/angular-logo.svg" alt="java-logo" width={60}
                                                height={60}/>
-                                        <Image src="/images/react-logo.svg" alt="java-logo" width={60} height={60}/>
-                                        <Image src="/images/docker-logo.svg" alt="java-logo" width={60}
+                                        <Image src="/images/react-logo.svg" alt="react-logo" width={60} height={60}/>
+                                        <Image src="/images/docker-logo.svg" alt="docker-logo" width={60}
+                                               height={60}/>
+                                        <Image src="/images/javascript-logo.svg" alt="javascript-logo" width={60}
                                                height={60}/>
                                     </div>
                                 </div>
@@ -126,15 +130,14 @@ export default function Home() {
                         <span className="font-mono"> {t('profile.description')} </span>
                         <br/>
                         <div className="flex justify-center items-center gap-4">
-                            <Button onClick={() => redirectToRecommendations()} variant="outline" className="font-mono">See
-                                my recommendations</Button>
+                            <Button onClick={() => redirectToRecommendations()} variant="outline" className="font-mono">{t('general.see_recommendations')}</Button>
                             <Button
                                 className="bg-[#08E0EC] text-white font-bold font-mono">{t('general.download_cv')}</Button>
                         </div>
                         <h1 className="text-2xl font-bold pt-20 dark:text-neutral-400">{t('general.core_strengths')}</h1>
                         <div className="flex flex-col lg:flex-row justify-center items-center gap-4 py-4">
                             <Card
-                                className="w-full lg:w-1/3 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+                                className="h-[300px] w-full lg:w-1/3 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
                                 <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
                                     <Image src="/images/strengths/dev-code.svg" alt="java-logo" width={80}
                                            height={80}/>
@@ -145,7 +148,7 @@ export default function Home() {
                                 </CardContent>
                             </Card>
                             <Card
-                                className="w-full lg:w-1/3 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+                                className="h-[300px] w-full lg:w-1/3 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
                                 <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
                                     <Image src="/images/strengths/customer-centric.svg" alt="java-logo"
                                            width={80} height={80}/>
@@ -156,7 +159,7 @@ export default function Home() {
                                 </CardContent>
                             </Card>
                             <Card
-                                className="w-full lg:w-1/3 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+                                className="h-[300px] w-full lg:w-1/3 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
                                 <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
                                     <Image src="/images/strengths/problem-solver.svg" alt="java-logo" width={80}
                                            height={80}/>
