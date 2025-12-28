@@ -30,6 +30,7 @@ export const viewport: Viewport = {
 };
 
 export default async function RootLayout({children}: Readonly<{ children: React.ReactNode; }>) {
+    const redirect = () => {}
     return (
         <html lang="en" suppressHydrationWarning>
         <body
@@ -42,19 +43,7 @@ export default async function RootLayout({children}: Readonly<{ children: React.
                 enableSystem
                 disableTransitionOnChange
             >
-                <div
-                    className="flex lg:flex-row flex-col w-full p-4 lg:justify-between justify-center border-b-1 border-[#2F2F2F]">
-                    <div
-                        className="flex justify-center items-center lg:justify-start lg:items-start w-full lg:w-1/4 font-mono">&lt;brunohf.dev/&gt;</div>
-                    <div className="w-full justify-center items-center flex lg:gap-4 gap-0 lg:flex-row flex-col">
-                        <Navigation/>
-                    </div>
-                    <div className="flex justify-center lg:flex-row lg:gap-4 gap-0 w-full lg:w-1/4 lg:justify-end">
-                        <LanguageSelector/>
-                        <ThemeToggle/>
-                        <ContactDialog/>
-                    </div>
-                </div>
+                <Navigation/>
                 {children}
             </ThemeProvider>
         </NextIntlClientProvider>
