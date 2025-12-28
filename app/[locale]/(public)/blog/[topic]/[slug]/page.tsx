@@ -4,8 +4,8 @@ import {useEffect, useState} from "react";
 import {useParams, useRouter} from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import {Card, CardContent} from "@/components/ui/card";
-import {Button} from "@/components/ui/button";
 import {useTranslations} from "use-intl";
+import {Button} from "@/components/ui/button";
 
 async function fetchArticles(topic: string, slug: string, language: string): Promise<string> {
     const res = await fetch(`https://raw.githubusercontent.com/brunoFreiberger/brunohf-web/main/articles/${topic}/${language}/${slug}.md`);

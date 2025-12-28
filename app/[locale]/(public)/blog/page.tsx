@@ -2,12 +2,12 @@
 
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {useEffect, useState} from "react";
-import {usePathname} from "next/navigation";
+import {useParams} from "next/navigation";
 import {Separator} from "@/components/ui/separator";
 import Link from "next/link";
 
 export type Article = {
-    id: string, title: string, description: string, file: string
+   title: string, description: string, file: string, min: number, date: string
 }
 
 export type Topic = {
@@ -15,28 +15,23 @@ export type Topic = {
 }
 
 export default function BlogPage() {
-
-    const pathname = usePathname();
-    const currentLocale = pathname.split("/")[1] || "en";
-
-    const [articles, setArticles] = useState<Article[]>([]);
     const [topics, setTopics] = useState<Topic[]>([]);
+    const params = useParams<{ locale: string; }>();
 
     useEffect(() => {
         async function loadContent() {
-            const res = await fetch(`https://raw.githubusercontent.com/brunoFreiberger/brunohf-web/main/articles/index.json`);
+            const res = await fetch(`https://raw.githubusercontent.com/brunoFreiberger/brunohf-web/main/articles/index/${params.locale}/index.json`);
             const data = await res.json();
             setTopics(data.topics);
         }
-
         loadContent();
-    }, [currentLocale])
+    }, [params.locale])
     return (
         <div className="w-full lg:mx-auto h-full justify-center items-center flex flex-col p-10">
             <div>Blog</div>
             <div className="flex flex-row w-full lg:w-2/3 gap-4">
                 <Tabs defaultValue="development" className="w-full items-center py-4">
-                    <TabsList>
+                    <TabsList className="w-full overflow-x-auto">
                         {topics.map((item, index: number) => {
                             return <TabsTrigger key={index} value={item.folder}>{item.title}</TabsTrigger>
                         })}
@@ -51,9 +46,11 @@ export default function BlogPage() {
                                                 return (
                                                     <Link key={index} href={`blog/${topic.folder}/${article.file}`}>
                                                         <div className=" py-4 w-full flex flex-col gap-4 font-mono">
-                                                            <span className="text-xl font-bold text-heading md:text-2xl lg:Text-3xl">{article.title}</span>
-                                                            <span className="text-neutral-400">{article.description}</span>
-                                                            <span className="text-xs">4 min. read</span>
+                                                            <span
+                                                                className="text-xl font-bold text-heading md:text-2xl lg:Text-3xl">{article.title}</span>
+                                                            <span
+                                                                className="text-neutral-400">{article.description}</span>
+                                                            <span className="text-xs">{article.date} - {article.min} min. read</span>
                                                             <Separator/>
                                                         </div>
                                                     </Link>
@@ -66,8 +63,6 @@ export default function BlogPage() {
                         })
                     }
                 </Tabs>
-
-
             </div>
         </div>
     );

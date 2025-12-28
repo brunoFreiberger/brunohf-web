@@ -1,0 +1,24 @@
+{
+  "topics": [
+    {
+      "order": 0,
+      "title": "Desenvolvimento",
+      "folder": "development",
+      "articles": [
+        {
+          "order": 0, "title": "SOLID", "file": "solid", "description": "Princípios SOLID"
+        }
+      ]
+    },
+    {
+      "order": 1,
+      "title": "Estrutura de Dados",
+      "folder": "data-structure"
+    },
+    {
+      "order": 2,
+      "title": "Algoritmos",
+      "folder": "algorithms"
+    }
+  ]
+}

@@ -9,12 +9,12 @@ export default function AboutMePage() {
     const education = t.raw("sections.education.items");
     const languages = t.raw("sections.languages.items");
     return (
-        <div className="w-full lg:mx-auto h-full justify-center items-center flex flex-col p-10">
-            <div>{t('title')}</div>
-            <div className="flex flex-row w-full lg:w-2/3 gap-4">
+        <div className="w-full lg:mx-auto h-full justify-center items-center flex flex-col py-4">
+            <div className="font-bold text-2xl">{t('title')}</div>
+            <div className="flex flex-col lg:flex-row w-full lg:w-2/3 gap-4 p-4">
                 <div className="flex flex-col gap-4 w-full lg:w-1/3">
                     <Card
-                        className="w-full transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] mt-4">
+                        className="w-full transition-all duration-300 hover:-translate-y-1">
                         <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
                             <CardTitle>{t('sections.introduction.title')}</CardTitle>
                         </CardHeader>
@@ -23,7 +23,7 @@ export default function AboutMePage() {
                         </CardContent>
                     </Card>
                     <Card
-                        className="w-full transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+                        className="w-full transition-all duration-300 hover:-translate-y-1">
                         <CardHeader className="w-full flex flex-col justify-center items-center">
                             <CardTitle>{t('sections.education.title')}</CardTitle>
                         </CardHeader>
@@ -42,7 +42,7 @@ export default function AboutMePage() {
                         </CardContent>
                     </Card>
                     <Card
-                        className="w-full transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
+                        className="w-full transition-all duration-300 hover:-translate-y-1">
                         <CardHeader className="w-full flex flex-col justify-center items-center">
                             <CardTitle>{t('sections.languages.title')}</CardTitle>
                         </CardHeader>
@@ -60,7 +60,7 @@ export default function AboutMePage() {
                 </div>
 
                 <Card
-                    className="w-full lg:w-2/3 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] mt-4">
+                    className="w-full lg:w-2/3 transition-all duration-300 hover:-translate-y-1">
                     <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
                         <CardTitle>{t('sections.experience.title')}</CardTitle>
                     </CardHeader>
