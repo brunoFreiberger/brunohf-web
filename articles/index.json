@@ -6,7 +6,7 @@
       "folder": "development",
       "articles": [
         {
-          "order": 0, "title": "SOLID", "file": "solid.md", "description": "SOLID Principles"
+          "order": 0, "title": "SOLID", "file": "solid", "description": "SOLID Principles"
         }
       ]
     },
