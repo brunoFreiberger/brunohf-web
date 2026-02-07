@@ -20,7 +20,7 @@ export default function BlogPage() {
 
     useEffect(() => {
         async function loadContent() {
-            const res = await fetch(`https://raw.githubusercontent.com/brunoFreiberger/brunohf-web/main/articles/index/${params.locale}/index.json`);
+            const res = await fetch(`https://raw.githubusercontent.com/brunoFreiberger/brunohf-web/main/content/articles/index/${params.locale}/index.json`);
             const data = await res.json();
             setTopics(data.topics);
         }

@@ -21,13 +21,14 @@
       "tech_stack": "Tecnologias",
       "see_recommendations": "Veja minhas recomendações",
       "download_cv": "Baixar CV",
-      "core_strengths": "Principais Competências"
+      "core_strengths": "Principais Competências",
+      "view_more": "Ver Mais"
     }
   },
   "Navbar": {
     "home": "Início",
     "about_me": "Sobre mim",
-    "portfolio": "Portfolio",
+    "projects": "Projetos",
     "blog": "Blog"
   },
   "Contact": {

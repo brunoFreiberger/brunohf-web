@@ -21,13 +21,15 @@
       "tech_stack": "Tech Stack",
       "see_recommendations": "See my recommendations",
       "download_cv": "Download CV",
-      "core_strengths": "Core Strengths"
+      "core_strengths": "Core Strengths",
+      "projects": "Featured Projects",
+      "view_more": "View More"
     }
   },
   "Navbar": {
     "home": "Home",
     "about_me": "About Me",
-    "portfolio": "Portfolio",
+    "projects": "Projects",
     "blog": "Blog"
   },
   "Contact": {

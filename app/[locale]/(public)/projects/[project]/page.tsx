@@ -1,26 +1,26 @@
 "use client"
 
-import {useEffect, useState} from "react";
 import {useParams, useRouter} from "next/navigation";
-import ReactMarkdown from "react-markdown";
-import {Card, CardContent} from "@/components/ui/card";
+import {useEffect, useState} from "react";
 import {useTranslations} from "use-intl";
 import {Button} from "@/components/ui/button";
+import {Card, CardContent} from "@/components/ui/card";
+import ReactMarkdown from "react-markdown";
 
-async function fetchArticles(topic: string, slug: string, language: string): Promise<string> {
-    const res = await fetch(`https://raw.githubusercontent.com/brunoFreiberger/brunohf-web/main/content/articles/${topic}/${language}/${slug}.md`);
+async function fetchProjects(project: string, language: string): Promise<string> {
+    const res = await fetch(`https://raw.githubusercontent.com/brunoFreiberger/brunohf-web/main/content/projects/${project}/${language}/content.md`);
     return await res.text();
 }
 
-export default function ArticlePage() {
-    const params = useParams<{ locale: string; topic: string; slug: string }>();
-    const [article, setArticle] = useState<string>();
+export default function ProjectPage() {
+    const params = useParams<{ locale: string; project: string; }>();
+    const [project, setProject] = useState<string>();
     const router = useRouter();
     const t = useTranslations('Blog');
     useEffect(() => {
         async function loadArticle() {
-            fetchArticles(params.topic, params.slug, params.locale).then(data => {
-                setArticle(data);
+            fetchProjects(params.project, params.locale).then(data => {
+                setProject(data);
             });
         }
         loadArticle();
@@ -31,7 +31,7 @@ export default function ArticlePage() {
             <Card className="mt-10">
                 <CardContent>
                     <article className="prose dark:prose-invert max-w-none">
-                        <ReactMarkdown>{article}</ReactMarkdown>
+                        <ReactMarkdown>{project}</ReactMarkdown>
                     </article>
                 </CardContent>
             </Card>

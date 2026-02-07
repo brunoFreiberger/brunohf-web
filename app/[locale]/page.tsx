@@ -19,7 +19,7 @@ export default function Home() {
     const t = useTranslations('HomePage');
     return (
         <div className="w-full lg:mx-auto h-full">
-            <div className="flex flex-col lg:flex-row justify-center items-center sm:w-full lg:w-5/6 mx-auto">
+            <div className="flex flex-col lg:flex-row justify-start items-start sm:w-full lg:w-5/6 mx-auto">
                 <div className="md:w-1/4 sm:w-full h-full flex justify-end">
                     <div className="p-4 flex flex-col w-full items-end">
                         <Card className="w-full transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]">
@@ -106,7 +106,7 @@ export default function Home() {
 
 
                         {/*<div className="flex flex-col">*/}
-                        {/*    <span>Some of content</span>*/}
+                        {/*    <span>Some of how-this-website-was-built</span>*/}
                         {/*    <a*/}
                         {/*        href="https://github.com/brunofreiberger"*/}
                         {/*        target="_blank"*/}
@@ -170,6 +170,41 @@ export default function Home() {
                                 </CardContent>
                             </Card>
                         </div>
+
+                        <h1 className="text-2xl font-bold pt-10 dark:text-neutral-400">{t('general.projects')}</h1>
+                        <div className="flex flex-col lg:flex-row justify-center items-center gap-4 py-4">
+                            <Card
+                                className="h-[200px] w-full lg:w-1/2 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] flex flex-row">
+                                <div className="w-[150px] h-[150px] flex justify-center items-center">
+                                    <Image src="/images/strengths/problem-solver.svg" alt="java-logo" width={150}
+                                           height={150}/>
+                                </div>
+                                <div>
+                                    <CardHeader className="w-full flex flex-col justify-start items-start gap-4">
+                                        <CardTitle>{t('profile.exp_card.title')}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent className="text-start text-neutral-400 pt-4">
+                                        <p>{t('profile.exp_card.description')}</p>
+                                    </CardContent>
+                                </div>
+                            </Card>
+                            <Card
+                                className="h-[200px] w-full lg:w-1/2 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] flex flex-row">
+                                <div className="w-[150px] h-[150px] flex justify-center items-center">
+                                    <Image src="/images/strengths/problem-solver.svg" alt="java-logo" width={150}
+                                           height={150}/>
+                                </div>
+                                <div>
+                                    <CardHeader className="w-full flex flex-col justify-start items-start gap-4">
+                                        <CardTitle>{t('profile.exp_card.title')}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent className="text-start text-neutral-400 pt-4">
+                                        <p>{t('profile.exp_card.description')}</p>
+                                    </CardContent>
+                                </div>
+                            </Card>
+                        </div>
+                        <Button variant="outline" className="font-mono">{t('general.view_more')}</Button>
                     </div>
                 </div>
             </div>
