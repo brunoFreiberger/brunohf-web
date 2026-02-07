@@ -21,22 +21,25 @@ export default function PortfolioPage() {
 
         loadContent();
     }, [params.locale])
+
     return (
         <div className="w-full lg:mx-auto h-full justify-center items-center flex flex-col p-10">
             <div>Portfolio</div>
-            {projects.map((project, index: number) => {
-                return <div key={index} className="flex flex-row w-full lg:w-2/3 gap-4">
-                    <Card
-                        className="w-full transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] mt-4">
-                        <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
-                            <CardTitle>{project.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            {project.description}
-                        </CardContent>
-                    </Card>
-                </div>
-            })}
+            {
+                projects?.map((project, index: number) => {
+                    return <div key={index} className="flex flex-row w-full lg:w-2/3 gap-4">
+                        <Card
+                            className="w-full transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] mt-4">
+                            <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
+                                <CardTitle>{project.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                {project.description}
+                            </CardContent>
+                        </Card>
+                    </div>
+                })
+            }
         </div>
     );
 }

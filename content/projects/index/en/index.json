@@ -1,9 +1,11 @@
 {
-  "topics": [
+  "PROJECTS": [
     {
       "order": 0,
       "title": "How this website was built?",
-      "folder": "how-this-website-was-built"
+      "folder": "how-this-website-was-built",
+      "image": "",
+      "description": ""
     }
   ]
 }

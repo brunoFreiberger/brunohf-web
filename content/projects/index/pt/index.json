@@ -2,10 +2,10 @@
   "projects": [
     {
       "order": 0,
-      "title": "Como esse website foi construído",
+      "title": "How this website was built?",
+      "folder": "how-this-website-was-built",
       "image": "",
-      "description": "",
-      "link": "como-website-pessoal-foi-construido"
+      "description": ""
     }
   ]
 }
