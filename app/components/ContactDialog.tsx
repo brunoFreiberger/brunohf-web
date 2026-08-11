@@ -25,8 +25,7 @@ export default function ContactDialog() {
         <>
             <Dialog>
                 <DialogTrigger asChild>
-                    <Button variant="outline"
-                            className="border-1 border-[#08e1ec] dark:!border-[#08e1ec] font-mono">{t('contact_me')}</Button>
+                    <Button variant="outline" className="border-brand">{t('contact_me')}</Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
                     <DialogHeader>

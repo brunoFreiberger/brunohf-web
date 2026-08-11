@@ -3,9 +3,8 @@
 import {useEffect, useState} from "react";
 import {useParams, useRouter} from "next/navigation";
 import ReactMarkdown from "react-markdown";
-import {Card, CardContent} from "@/components/ui/card";
 import {useTranslations} from "use-intl";
-import {Button} from "@/components/ui/button";
+import {ArrowLeft} from "lucide-react";
 
 async function fetchArticles(topic: string, slug: string, language: string): Promise<string> {
     const res = await fetch(`https://raw.githubusercontent.com/brunoFreiberger/brunohf-web/main/content/articles/${topic}/${language}/${slug}.md`);
@@ -26,15 +25,17 @@ export default function ArticlePage() {
         loadArticle();
     }, [params.locale]);
     return (
-        <div className="w-3/4 lg:w-2/3 mx-auto mt-10">
-            <Button onClick={() => router.back()}>{t('back')}</Button>
-            <Card className="mt-10">
-                <CardContent>
-                    <article className="prose dark:prose-invert max-w-none">
-                        <ReactMarkdown>{article}</ReactMarkdown>
-                    </article>
-                </CardContent>
-            </Card>
+        <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
+            <button
+                onClick={() => router.back()}
+                className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
+            >
+                <ArrowLeft className="size-4"/>
+                {t('back')}
+            </button>
+            <article className="prose dark:prose-invert mt-10 max-w-none">
+                <ReactMarkdown>{article}</ReactMarkdown>
+            </article>
         </div>
     )
 }

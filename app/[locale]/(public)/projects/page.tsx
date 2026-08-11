@@ -1,6 +1,5 @@
 "use client"
 
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {useEffect, useState} from "react";
 import {useParams} from "next/navigation";
 
@@ -23,23 +22,24 @@ export default function PortfolioPage() {
     }, [params.locale])
 
     return (
-        <div className="w-full lg:mx-auto h-full justify-center items-center flex flex-col p-10">
-            <div>Portfolio</div>
-            {
-                projects?.map((project, index: number) => {
-                    return <div key={index} className="flex flex-row w-full lg:w-2/3 gap-4">
-                        <Card
-                            className="w-full transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] mt-4">
-                            <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
-                                <CardTitle>{project.title}</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                {project.description}
-                            </CardContent>
-                        </Card>
-                    </div>
-                })
-            }
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
+            <h1 className="text-3xl font-semibold tracking-tight">Portfolio</h1>
+            <div className="mt-8 flex flex-col gap-4">
+                {
+                    projects?.map((project, index: number) => (
+                        <a
+                            key={index}
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block rounded-lg border border-border p-4 transition-colors hover:bg-accent"
+                        >
+                            <h2 className="font-semibold">{project.title}</h2>
+                            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+                        </a>
+                    ))
+                }
+            </div>
         </div>
     );
 }

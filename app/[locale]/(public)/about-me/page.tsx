@@ -1,89 +1,96 @@
 "use client"
 
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {useTranslations} from "use-intl";
+import {Separator} from "@/components/ui/separator";
+import {Card, CardContent} from "@/components/ui/card";
+import {cn} from "@/lib/utils";
+
+type ExperienceItem = { period: string; role: string; company: string; description?: string };
+type EducationItem = { period: string; institution: string; degree: string };
+type LanguageItem = { language: string; level: string };
 
 export default function AboutMePage() {
     const t = useTranslations('AboutMe');
-    const experience = t.raw("sections.experience.items");
-    const education = t.raw("sections.education.items");
-    const languages = t.raw("sections.languages.items");
+    const experience = t.raw("sections.experience.items") as ExperienceItem[];
+    const education = t.raw("sections.education.items") as EducationItem[];
+    const languages = t.raw("sections.languages.items") as LanguageItem[];
     return (
-        <div className="w-full lg:mx-auto h-full justify-center items-center flex flex-col py-4">
-            <div className="font-bold text-2xl">{t('title')}</div>
-            <div className="flex flex-col lg:flex-row w-full lg:w-2/3 gap-4 p-4">
-                <div className="flex flex-col gap-4 w-full lg:w-1/3">
-                    <Card
-                        className="w-full transition-all duration-300 hover:-translate-y-1">
-                        <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
-                            <CardTitle>{t('sections.introduction.title')}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            {t('sections.introduction.text')}
-                        </CardContent>
-                    </Card>
-                    <Card
-                        className="w-full transition-all duration-300 hover:-translate-y-1">
-                        <CardHeader className="w-full flex flex-col justify-center items-center">
-                            <CardTitle>{t('sections.education.title')}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            {
-                                education.map((item, index: number) => {
-                                    return <div key={index} className="mb-10">
-                                        <p className="text-sm text-muted-foreground">{item.period}</p>
-                                        <h3 className="text-lg font-semibold">{item.institution}</h3>
-                                        <p className="text-sm text-muted-foreground font-bold">
-                                            {item.degree}
-                                        </p>
-                                    </div>
-                                })
-                            }
-                        </CardContent>
-                    </Card>
-                    <Card
-                        className="w-full transition-all duration-300 hover:-translate-y-1">
-                        <CardHeader className="w-full flex flex-col justify-center items-center">
-                            <CardTitle>{t('sections.languages.title')}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            {
-                                languages.map((item, index: number) => {
-                                    return <div key={index} className="mb-10">
-                                        <h3 className="text-lg font-semibold">{item.language}</h3>
-                                        <p className="text-sm text-muted-foreground">{item.level}</p>
-                                    </div>
-                                })
-                            }
-                        </CardContent>
-                    </Card>
-                </div>
-
-                <Card
-                    className="w-full lg:w-2/3 transition-all duration-300 hover:-translate-y-1">
-                    <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
-                        <CardTitle>{t('sections.experience.title')}</CardTitle>
-                    </CardHeader>
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
+            <h1 className="text-3xl font-semibold tracking-tight">{t('title')}</h1>
+            <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-[1fr_2fr] lg:gap-16">
+                <Card className="w-full">
                     <CardContent>
-                        <div className="relative border-l border-muted-foreground/20 pl-6">
-                            {experience.map((item, index: number) => {
-                                const isLast = index === 0;
-                                return (
-                                    <div key={index} className="mb-10">
-                                        <div
-                                            className={`absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full ${isLast ? "bg-[#08e1ec] border border-primary h-5 w-5 -left-2.5" : "bg-primary"}`}/>
-                                        <p></p>
-                                        <p className="text-sm text-muted-foreground">{item.period}</p>
-                                        <h3 className="text-lg font-semibold">{item.role}</h3>
-                                        <p className="text-sm text-muted-foreground font-bold">
-                                            {item.company}</p>
-                                        {item.description && (
-                                            <p className="mt-2 text-sm leading-relaxed">{item.description}</p>
-                                        )}
-                                    </div>
-                                )
-                            })}
+                        <div className="flex flex-col gap-10">
+                            <section>
+                                <h3 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">{t('sections.introduction.title')}</h3>
+                                <p className="mt-3 text-sm leading-relaxed">{t('sections.introduction.text')}</p>
+                            </section>
+
+                            <Separator/>
+
+                            <section>
+                                <h3 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">{t('sections.education.title')}</h3>
+                                <div className="mt-4 flex flex-col gap-6">
+                                    {
+                                        education.map((item, index: number) => {
+                                            return <div key={index}>
+                                                <p className="text-xs text-muted-foreground">{item.period}</p>
+                                                <h4 className="mt-1 font-semibold">{item.institution}</h4>
+                                                <p className="text-sm text-muted-foreground">
+                                                    {item.degree}
+                                                </p>
+                                            </div>
+                                        })
+                                    }
+                                </div>
+                            </section>
+
+                            <Separator/>
+
+                            <section>
+                                <h3 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">{t('sections.languages.title')}</h3>
+                                <div className="mt-4 flex flex-col gap-4">
+                                    {
+                                        languages.map((item, index: number) => {
+                                            return <div key={index}>
+                                                <h4 className="font-semibold">{item.language}</h4>
+                                                <p className="text-sm text-muted-foreground">{item.level}</p>
+                                            </div>
+                                        })
+                                    }
+                                </div>
+                            </section>
                         </div>
+                    </CardContent>
+                </Card>
+
+                <Card className="w-full">
+                    <CardContent>
+                        <section>
+                            <h3 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">{t('sections.experience.title')}</h3>
+                            <div className="relative mt-6 border-l border-border pl-6">
+                                {experience.map((item, index: number) => {
+                                    const isCurrent = index === 0;
+                                    return (
+                                        <div key={index} className="mb-10 last:mb-0">
+                                            <div
+                                                className={cn(
+                                                    "absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full bg-foreground",
+                                                    isCurrent && "-left-2 h-4 w-4 bg-brand"
+                                                )}
+                                            />
+                                            <p className="text-sm text-muted-foreground">{item.period}</p>
+                                            <h4 className="text-lg font-semibold">{item.role}</h4>
+                                            <p className="text-sm font-medium text-muted-foreground">
+                                                {item.company}</p>
+                                            {item.description && (
+                                                <p className="mt-2 text-sm leading-relaxed">{item.description}</p>
+                                            )}
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </section>
                     </CardContent>
                 </Card>
             </div>

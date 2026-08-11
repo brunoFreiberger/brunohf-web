@@ -1,19 +1,11 @@
-import Image from "next/image";
-import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
-
 export default function Recommendations() {
     return (
-        <div className="w-full lg:mx-auto h-full justify-center items-center flex flex-col p-10">
-            <div>Endorsements</div>
-            <div className="flex flex-row w-full lg:w-2/3 gap-4">
-                <Card
-                    className="w-full lg:w-1/3 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] mt-4">
-                    <CardHeader className="w-full flex flex-col justify-center items-center gap-4">
-                        <CardTitle>Java</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                    </CardContent>
-                </Card>
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
+            <h1 className="text-3xl font-semibold tracking-tight">Endorsements</h1>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <div className="w-full rounded-lg border border-border p-4 sm:w-1/3">
+                    <h2 className="font-semibold">Java</h2>
+                </div>
             </div>
         </div>
     );
