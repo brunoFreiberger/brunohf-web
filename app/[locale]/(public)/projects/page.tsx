@@ -2,9 +2,10 @@
 
 import {useEffect, useState} from "react";
 import {useParams} from "next/navigation";
+import Link from "next/link";
 
 export type Project = {
-    title: string, description: string, link: string, image: string
+    order: number, title: string, folder: string, image: string, description: string
 }
 
 export default function PortfolioPage() {
@@ -27,16 +28,14 @@ export default function PortfolioPage() {
             <div className="mt-8 flex flex-col gap-4">
                 {
                     projects?.map((project, index: number) => (
-                        <a
+                        <Link
                             key={index}
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href={`projects/${project.folder}`}
                             className="block rounded-lg border border-border p-4 transition-colors hover:bg-accent"
                         >
                             <h2 className="font-semibold">{project.title}</h2>
                             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
-                        </a>
+                        </Link>
                     ))
                 }
             </div>
