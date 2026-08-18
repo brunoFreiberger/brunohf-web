@@ -4,7 +4,7 @@
       "subtitle": "Engenheiro Full-Stack Dedicado e Focado em Resolução de Problemas",
       "description": "Desenvolvedor Full-Stack com ampla experiência em Java (Spring Boot) e JavaScript (Angular, React, Node.js). Apaixonado por criar soluções escaláveis, confiáveis e centradas no usuário, sempre focadas em gerar resultados reais para o negócio.",
       "exp_card": {
-        "title": "Mais de 10 Anos de Experiência",
+        "title": "Mais de 12 Anos de Experiência",
         "description": "Profissional com mais de uma década de prática em diferentes tecnologias e setores."
       },
       "cc_card": {
@@ -23,7 +23,10 @@
       "download_cv": "Baixar CV",
       "core_strengths": "Principais Competências",
       "projects": "Projetos em Destaque",
-      "view_more": "Ver Mais"
+      "view_more": "Ver Mais",
+      "blog_posts": "Últimos Posts do Blog",
+      "no_projects_found": "Nenhum projeto encontrado ainda.",
+      "no_posts_found": "Nenhuma publicação encontrada ainda."
     }
   },
   "Navbar": {
@@ -44,7 +47,7 @@
     "sections": {
       "introduction": {
         "title": "Quem sou eu",
-        "text": "Sou Bruno Henrique Freiberger, desenvolvedor de software com mais de nove anos de experiência em projetos full-stack. Tenho foco principal em Java (Spring) e JavaScript (Angular), atuando no desenvolvimento de soluções robustas, escaláveis e voltadas para performance. Também possuo vivência com diversas outras tecnologias e práticas de DevOps, contribuindo de ponta a ponta no ciclo de desenvolvimento."
+        "text": "Sou Bruno Henrique Freiberger, desenvolvedor de software com mais de 12 anos de experiência em projetos full-stack. Tenho foco principal em Java (Spring) e JavaScript (Angular), atuando no desenvolvimento de soluções robustas, escaláveis e voltadas para performance. Também possuo vivência com diversas outras tecnologias e práticas de DevOps, contribuindo de ponta a ponta no ciclo de desenvolvimento."
       },
       "experience": {
         "title": "Experiência profissional",

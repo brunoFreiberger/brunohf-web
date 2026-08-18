@@ -4,7 +4,7 @@
       "subtitle": "Dedicated Full-Stack Engineer and Problem Solver",
       "description": "Experienced Full-Stack Developer with strong expertise in Java (Spring Boot) and JavaScript (Angular, React, Node.js). Passionate about building scalable, reliable, and customer-centric solutions that deliver real business impact.",
       "exp_card": {
-        "title": "10+ Years of Experience",
+        "title": "12+ Years of Experience",
         "description": "Experienced developer with over a decade of hands-on work across diverse technologies and industries."
       },
       "cc_card": {
@@ -23,7 +23,10 @@
       "download_cv": "Download CV",
       "core_strengths": "Core Strengths",
       "projects": "Featured Projects",
-      "view_more": "View More"
+      "view_more": "View More",
+      "blog_posts": "Latest Blog Posts",
+      "no_projects_found": "No projects found yet.",
+      "no_posts_found": "No posts found yet."
     }
   },
   "Navbar": {
@@ -44,7 +47,7 @@
     "sections": {
       "introduction": {
         "title": "Who I am",
-        "text": "I am Bruno Henrique Freiberger, a software developer with over nine years of experience in full-stack development. My core expertise lies in Java (Spring) and JavaScript (Angular), delivering scalable, high-quality solutions. I also have hands-on experience with a wide range of technologies and DevOps practices, contributing across the entire development lifecycle."
+        "text": "I am Bruno Henrique Freiberger, a software developer with over 12 years of experience in full-stack development. My core expertise lies in Java (Spring) and JavaScript (Angular), delivering scalable, high-quality solutions. I also have hands-on experience with a wide range of technologies and DevOps practices, contributing across the entire development lifecycle."
       },
       "experience": {
         "title": "Professional experience",
