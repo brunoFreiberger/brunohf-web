@@ -1,13 +1,11 @@
 import type {Metadata, Viewport} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
+import {notFound} from "next/navigation";
 import "../globals.css";
 import {ThemeProvider} from "@/components/theme-provider"
-import {NavigationMenu, NavigationMenuLink, NavigationMenuList} from "@/components/ui/navigation-menu";
-import {ThemeToggle} from "@/components/theme-toggle";
-import ContactDialog from "@/app/components/ContactDialog";
-import {NextIntlClientProvider} from "next-intl";
-import LanguageSelector from "@/app/components/LanguageSelector";
+import {hasLocale, NextIntlClientProvider} from "next-intl";
 import Navigation from "@/app/components/Navigation";
+import {routing} from "@/i18n/routing";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -29,10 +27,18 @@ export const viewport: Viewport = {
     initialScale: 1,
 };
 
-export default async function RootLayout({children}: Readonly<{ children: React.ReactNode; }>) {
-    const redirect = () => {}
+export default async function RootLayout({children, params}: Readonly<{
+    children: React.ReactNode;
+    params: Promise<{ locale: string }>;
+}>) {
+    const {locale} = await params;
+    // Without this, any unknown first segment (e.g. /robots.txt) renders the homepage.
+    if (!hasLocale(routing.locales, locale)) {
+        notFound();
+    }
+
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang={locale} suppressHydrationWarning>
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >

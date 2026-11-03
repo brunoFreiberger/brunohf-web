@@ -2,7 +2,7 @@
 
 import {useEffect, useState} from "react";
 import {useParams} from "next/navigation";
-import Link from "next/link";
+import {Link} from "@/i18n/navigation";
 
 export type Project = {
     order: number, title: string, folder: string, image: string, description: string
@@ -30,7 +30,7 @@ export default function PortfolioPage() {
                     projects?.map((project, index: number) => (
                         <Link
                             key={index}
-                            href={`projects/${project.folder}`}
+                            href={`/projects/${project.folder}`}
                             className="block rounded-lg border border-border p-4 transition-colors hover:bg-accent"
                         >
                             <h2 className="font-semibold">{project.title}</h2>

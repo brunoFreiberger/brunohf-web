@@ -28,7 +28,7 @@ export default function ArticlePage() {
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
             <button
                 onClick={() => router.back()}
-                className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
+                className="-my-2 flex items-center gap-1 py-2 text-sm text-muted-foreground hover:text-foreground"
             >
                 <ArrowLeft className="size-4"/>
                 {t('back')}

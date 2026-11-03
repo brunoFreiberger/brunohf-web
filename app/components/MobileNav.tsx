@@ -10,17 +10,16 @@ import {Separator} from "@/components/ui/separator"
 import LanguageSelector from "@/app/components/LanguageSelector"
 import {ThemeToggle} from "@/components/theme-toggle"
 import ContactDialog from "@/app/components/ContactDialog"
+import {Link} from "@/i18n/navigation"
 
 export type NavLink = { label: string; route: string }
 
 export default function MobileNav({
     links,
     isActive,
-    onNavigate,
 }: {
     links: NavLink[]
     isActive: (route: string) => boolean
-    onNavigate: (route: string) => void
 }) {
     const [open, setOpen] = React.useState(false)
 
@@ -47,19 +46,18 @@ export default function MobileNav({
                 </DialogPrimitive.Description>
                 <nav className="flex flex-col gap-4">
                     {links.map((link) => (
-                        <a
+                        <Link
                             key={link.route}
-                            onClick={() => {
-                                onNavigate(link.route)
-                                setOpen(false)
-                            }}
+                            href={link.route}
+                            onClick={() => setOpen(false)}
+                            aria-current={isActive(link.route) ? "page" : undefined}
                             className={cn(
-                                "cursor-pointer text-base font-medium",
+                                "text-base font-medium",
                                 isActive(link.route) ? "text-foreground" : "text-muted-foreground"
                             )}
                         >
                             {link.label}
-                        </a>
+                        </Link>
                     ))}
                 </nav>
                 <Separator className="my-6"/>

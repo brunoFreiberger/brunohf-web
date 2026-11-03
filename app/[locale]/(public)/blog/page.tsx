@@ -4,7 +4,7 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {useEffect, useState} from "react";
 import {useParams} from "next/navigation";
 import {Separator} from "@/components/ui/separator";
-import Link from "next/link";
+import {Link} from "@/i18n/navigation";
 
 export type Article = {
    title: string, description: string, file: string, min: number, date: string
@@ -35,7 +35,7 @@ export default function BlogPage() {
                         return <TabsTrigger key={index} value={item.folder} className="w-full justify-start">{item.title}</TabsTrigger>
                     })}
                 </TabsList>
-                <div className="min-w-0 flex-1">
+                <div className="w-full min-w-0 flex-1">
                     {
                         topics.map((topic, index: number) => {
                             return (
@@ -44,7 +44,7 @@ export default function BlogPage() {
                                         topic.articles && topic.articles.length > 0 ?
                                             (topic.articles.map((article: Article, index: number) => {
                                                 return (
-                                                    <Link key={index} href={`blog/${topic.folder}/${article.file}`}>
+                                                    <Link key={index} href={`/blog/${topic.folder}/${article.file}`} className="block">
                                                         <div className="flex w-full flex-col gap-2 py-6">
                                                             <span
                                                                 className="text-xl font-semibold hover:text-brand md:text-2xl lg:text-3xl">{article.title}</span>
