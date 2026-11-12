@@ -1,61 +1,50 @@
 "use client"
 
-import {NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList} from "@/components/ui/navigation-menu";
 import {useTranslations} from "use-intl";
-import {usePathname, useRouter} from "next/navigation";
+import {Link, usePathname} from "@/i18n/navigation";
 import LanguageSelector from "@/app/components/LanguageSelector";
 import {ThemeToggle} from "@/components/theme-toggle";
 import ContactDialog from "@/app/components/ContactDialog";
 import MobileNav, {type NavLink} from "@/app/components/MobileNav";
+import {cn} from "@/lib/utils";
 
-export default function Navigation() {
-    const router = useRouter();
+export default function Navigation({showProjects}: { showProjects: boolean }) {
+    // Pathname without the locale prefix, e.g. "/projects/foo".
     const pathname = usePathname();
     const t = useTranslations('Navbar');
 
     const links: NavLink[] = [
         {label: t('home'), route: '/'},
         {label: t('about_me'), route: '/about-me'},
-        {label: t('projects'), route: '/projects'},
+        ...(showProjects ? [{label: t('projects'), route: '/projects'}] : []),
         {label: t('blog'), route: '/blog'},
     ];
 
-    const segments = pathname.split('/');
-    const currentPath = '/' + segments.slice(2).join('/');
-    const isActive = (route: string) => route === '/' ? currentPath === '/' : currentPath.startsWith(route);
-
-    const redirect = (route: string) => {
-        router.push(route);
-    }
+    const isActive = (route: string) => route === '/' ? pathname === '/' : pathname.startsWith(route);
 
     return (
-        <header className="relative w-full border-b border-border">
-            <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-                <a
-                    className="cursor-pointer text-base font-semibold tracking-tight"
-                    onClick={() => redirect('/')}
-                >
-                    <span className="text-muted-foreground">&lt;</span>
-                    brunohf.dev
-                    <span className="text-muted-foreground">/&gt;</span>
-                </a>
+        // Solid background on purpose: backdrop-blur would trap the mobile menu's fixed overlay inside the header.
+        <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
+            <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 sm:px-6 lg:px-8">
+                <Link href="/" className="font-semibold tracking-tight">brunohf.dev</Link>
 
                 <nav className="hidden lg:block">
-                    <NavigationMenu viewport={false}>
-                        <NavigationMenuList className="gap-1">
-                            {links.map((link) => (
-                                <NavigationMenuItem key={link.route}>
-                                    <NavigationMenuLink
-                                        active={isActive(link.route)}
-                                        onClick={() => redirect(link.route)}
-                                        className="cursor-pointer font-medium"
-                                    >
-                                        {link.label}
-                                    </NavigationMenuLink>
-                                </NavigationMenuItem>
-                            ))}
-                        </NavigationMenuList>
-                    </NavigationMenu>
+                    <ul className="flex items-center gap-1">
+                        {links.map((link) => (
+                            <li key={link.route}>
+                                <Link
+                                    href={link.route}
+                                    aria-current={isActive(link.route) ? "page" : undefined}
+                                    className={cn(
+                                        "block px-3 py-1.5 text-sm transition-colors",
+                                        isActive(link.route) ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                                    )}
+                                >
+                                    {link.label}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
                 </nav>
 
                 <div className="hidden items-center gap-3 lg:flex">
@@ -64,7 +53,7 @@ export default function Navigation() {
                     <ContactDialog/>
                 </div>
 
-                <MobileNav links={links} isActive={isActive} onNavigate={redirect}/>
+                <MobileNav links={links} isActive={isActive}/>
             </div>
         </header>
     )

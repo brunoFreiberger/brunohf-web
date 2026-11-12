@@ -5,20 +5,65 @@
       "title": "Development",
       "folder": "development",
       "articles": [
-        {
-          "order": 0, "title": "SOLID", "file": "solid", "description": "SOLID Principles"
-        }
+        {"order": 0, "title": "SOLID", "file": "solid", "description": "SOLID Principles"},
+        {"order": 1, "title": "Concurrency in Java: Threads, Executors and Virtual Threads", "file": "java-concurrency", "soon": true},
+        {"order": 2, "title": "Designing REST APIs That Last", "file": "rest-api-design", "soon": true},
+        {"order": 3, "title": "Observability in Practice: Logs, Metrics and Traces", "file": "observability", "soon": true}
       ]
     },
     {
       "order": 1,
-      "title": "Data Structure",
-      "folder": "data-structure"
+      "title": "System Design",
+      "folder": "system-design",
+      "articles": [
+        {"order": 0, "title": "How to Approach a System Design Interview", "file": "system-design-interview", "soon": true},
+        {"order": 1, "title": "Designing a URL Shortener", "file": "url-shortener", "soon": true},
+        {"order": 2, "title": "Designing a Rate Limiter", "file": "rate-limiter", "soon": true},
+        {"order": 3, "title": "Caching Strategies and Their Pitfalls", "file": "caching", "soon": true},
+        {"order": 4, "title": "Database Sharding and Replication Explained", "file": "sharding-and-replication", "soon": true},
+        {"order": 5, "title": "CAP Theorem and Consistency in Practice", "file": "cap-theorem", "soon": true},
+        {"order": 6, "title": "Message Queues and Event-Driven Architecture", "file": "message-queues", "soon": true}
+      ]
     },
     {
       "order": 2,
+      "title": "AI",
+      "folder": "ai",
+      "articles": [
+        {"order": 0, "title": "How LLMs Work: A Guide for Software Engineers", "file": "llms-for-engineers", "soon": true},
+        {"order": 1, "title": "Prompt Engineering for Developers", "file": "prompt-engineering", "soon": true},
+        {"order": 2, "title": "Embeddings and Vector Databases", "file": "embeddings-and-vector-databases", "soon": true},
+        {"order": 3, "title": "Building a RAG Application with Spring AI", "file": "rag-with-spring-ai", "soon": true},
+        {"order": 4, "title": "AI Agents and Tool Calling", "file": "ai-agents", "soon": true},
+        {"order": 5, "title": "Evaluating LLM Applications", "file": "llm-evaluation", "soon": true},
+        {"order": 6, "title": "Running LLMs in Production: Cost, Latency and Reliability", "file": "llms-in-production", "soon": true},
+        {"order": 7, "title": "Coding with AI Assistants: A Practical Workflow", "file": "ai-assisted-development", "soon": true}
+      ]
+    },
+    {
+      "order": 3,
+      "title": "Data Structure",
+      "folder": "data-structure",
+      "articles": [
+        {"order": 0, "title": "Hash Maps Under the Hood", "file": "hash-maps", "soon": true},
+        {"order": 1, "title": "Heaps and Priority Queues", "file": "heaps", "soon": true},
+        {"order": 2, "title": "Binary Search Trees and Balancing", "file": "trees", "soon": true},
+        {"order": 3, "title": "Graphs: Representations and When to Use Each", "file": "graphs", "soon": true},
+        {"order": 4, "title": "Tries: Building an Autocomplete", "file": "tries", "soon": true}
+      ]
+    },
+    {
+      "order": 4,
       "title": "Algorithms",
-      "folder": "algorithms"
+      "folder": "algorithms",
+      "articles": [
+        {"order": 0, "title": "Big-O Notation in Practice", "file": "big-o", "soon": true},
+        {"order": 1, "title": "Two Pointers and Sliding Window Patterns", "file": "two-pointers-sliding-window", "soon": true},
+        {"order": 2, "title": "Binary Search Beyond Sorted Arrays", "file": "binary-search", "soon": true},
+        {"order": 3, "title": "BFS and DFS: Graph Traversal Explained", "file": "bfs-dfs", "soon": true},
+        {"order": 4, "title": "Backtracking: Permutations, Subsets and Combinations", "file": "backtracking", "soon": true},
+        {"order": 5, "title": "Dynamic Programming: From Recursion to Tabulation", "file": "dynamic-programming", "soon": true}
+      ]
     }
   ]
 }

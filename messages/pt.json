@@ -2,7 +2,7 @@
   "HomePage": {
     "profile": {
       "subtitle": "Engenheiro Full-Stack Dedicado e Focado em Resolução de Problemas",
-      "description": "Desenvolvedor Full-Stack com ampla experiência em Java (Spring Boot) e JavaScript (Angular, React, Node.js). Apaixonado por criar soluções escaláveis, confiáveis e centradas no usuário, sempre focadas em gerar resultados reais para o negócio.",
+      "description": "Desenvolvedor Full-Stack com ampla experiência em Java (Spring Boot) e JavaScript (Angular, React, Node.js), além de vivência prática no desenvolvimento de produtos com IA. Apaixonado por criar soluções escaláveis, confiáveis e centradas no usuário, sempre focadas em gerar resultados reais para o negócio.",
       "exp_card": {
         "title": "Mais de 12 Anos de Experiência",
         "description": "Profissional com mais de uma década de prática em diferentes tecnologias e setores."
@@ -19,7 +19,6 @@
     "general": {
       "social_media": "Redes Sociais",
       "tech_stack": "Tecnologias",
-      "see_recommendations": "Veja minhas recomendações",
       "download_cv": "Baixar CV",
       "core_strengths": "Principais Competências",
       "projects": "Projetos em Destaque",
@@ -37,17 +36,29 @@
   },
   "Contact": {
     "contact_me": "Entre em contato",
-    "description": "Me envie um e-mail, responderei o mais breve possível."
+    "description": "Me envie um e-mail, responderei o mais breve possível.",
+    "cancel": "Cancelar",
+    "copy": "Copiar e-mail",
+    "copied": "E-mail copiado!"
   },
   "Blog": {
-    "back": "Voltar"
+    "back": "Voltar",
+    "loading": "carregando",
+    "min_read": "min de leitura",
+    "no_articles": "Nenhum artigo por aqui ainda.",
+    "coming_soon": "Em breve",
+    "load_error": "Não foi possível carregar esta página. Tente novamente mais tarde."
+  },
+  "NotFound": {
+    "title": "Página não encontrada.",
+    "home": "Voltar ao início"
   },
   "AboutMe": {
     "title": "Sobre mim",
     "sections": {
       "introduction": {
         "title": "Quem sou eu",
-        "text": "Sou Bruno Henrique Freiberger, desenvolvedor de software com mais de 12 anos de experiência em projetos full-stack. Tenho foco principal em Java (Spring) e JavaScript (Angular), atuando no desenvolvimento de soluções robustas, escaláveis e voltadas para performance. Também possuo vivência com diversas outras tecnologias e práticas de DevOps, contribuindo de ponta a ponta no ciclo de desenvolvimento."
+        "text": "Sou Bruno, desenvolvedor de software com mais de 12 anos de experiência em projetos full-stack. Tenho foco principal em Java (Spring) e JavaScript (Angular), atuando no desenvolvimento de soluções robustas, escaláveis e voltadas para performance. Também possuo vivência no desenvolvimento de produtos com IA, além de diversas outras tecnologias e práticas de DevOps, contribuindo de ponta a ponta no ciclo de desenvolvimento."
       },
       "experience": {
         "title": "Experiência profissional",

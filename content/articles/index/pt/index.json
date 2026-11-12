@@ -5,20 +5,65 @@
       "title": "Desenvolvimento",
       "folder": "development",
       "articles": [
-        {
-          "order": 0, "title": "SOLID", "file": "solid", "description": "Princípios SOLID"
-        }
+        {"order": 0, "title": "SOLID", "file": "solid", "description": "Princípios SOLID"},
+        {"order": 1, "title": "Concorrência em Java: Threads, Executors e Virtual Threads", "file": "java-concurrency", "soon": true},
+        {"order": 2, "title": "Projetando APIs REST que Duram", "file": "rest-api-design", "soon": true},
+        {"order": 3, "title": "Observabilidade na Prática: Logs, Métricas e Traces", "file": "observability", "soon": true}
       ]
     },
     {
       "order": 1,
-      "title": "Estrutura de Dados",
-      "folder": "data-structure"
+      "title": "Design de Sistemas",
+      "folder": "system-design",
+      "articles": [
+        {"order": 0, "title": "Como Encarar uma Entrevista de System Design", "file": "system-design-interview", "soon": true},
+        {"order": 1, "title": "Projetando um Encurtador de URLs", "file": "url-shortener", "soon": true},
+        {"order": 2, "title": "Projetando um Rate Limiter", "file": "rate-limiter", "soon": true},
+        {"order": 3, "title": "Estratégias de Cache e Suas Armadilhas", "file": "caching", "soon": true},
+        {"order": 4, "title": "Sharding e Replicação de Banco de Dados", "file": "sharding-and-replication", "soon": true},
+        {"order": 5, "title": "Teorema CAP e Consistência na Prática", "file": "cap-theorem", "soon": true},
+        {"order": 6, "title": "Filas de Mensagens e Arquitetura Orientada a Eventos", "file": "message-queues", "soon": true}
+      ]
     },
     {
       "order": 2,
+      "title": "IA",
+      "folder": "ai",
+      "articles": [
+        {"order": 0, "title": "Como LLMs Funcionam: Um Guia para Engenheiros de Software", "file": "llms-for-engineers", "soon": true},
+        {"order": 1, "title": "Engenharia de Prompt para Desenvolvedores", "file": "prompt-engineering", "soon": true},
+        {"order": 2, "title": "Embeddings e Bancos de Dados Vetoriais", "file": "embeddings-and-vector-databases", "soon": true},
+        {"order": 3, "title": "Construindo uma Aplicação RAG com Spring AI", "file": "rag-with-spring-ai", "soon": true},
+        {"order": 4, "title": "Agentes de IA e Tool Calling", "file": "ai-agents", "soon": true},
+        {"order": 5, "title": "Avaliando Aplicações com LLMs", "file": "llm-evaluation", "soon": true},
+        {"order": 6, "title": "LLMs em Produção: Custo, Latência e Confiabilidade", "file": "llms-in-production", "soon": true},
+        {"order": 7, "title": "Programando com Assistentes de IA: Um Fluxo Prático", "file": "ai-assisted-development", "soon": true}
+      ]
+    },
+    {
+      "order": 3,
+      "title": "Estrutura de Dados",
+      "folder": "data-structure",
+      "articles": [
+        {"order": 0, "title": "Hash Maps por Dentro", "file": "hash-maps", "soon": true},
+        {"order": 1, "title": "Heaps e Filas de Prioridade", "file": "heaps", "soon": true},
+        {"order": 2, "title": "Árvores Binárias de Busca e Balanceamento", "file": "trees", "soon": true},
+        {"order": 3, "title": "Grafos: Representações e Quando Usar Cada Uma", "file": "graphs", "soon": true},
+        {"order": 4, "title": "Tries: Construindo um Autocompletar", "file": "tries", "soon": true}
+      ]
+    },
+    {
+      "order": 4,
       "title": "Algoritmos",
-      "folder": "algorithms"
+      "folder": "algorithms",
+      "articles": [
+        {"order": 0, "title": "Notação Big-O na Prática", "file": "big-o", "soon": true},
+        {"order": 1, "title": "Padrões Two Pointers e Sliding Window", "file": "two-pointers-sliding-window", "soon": true},
+        {"order": 2, "title": "Busca Binária Além de Arrays Ordenados", "file": "binary-search", "soon": true},
+        {"order": 3, "title": "BFS e DFS: Percorrendo Grafos", "file": "bfs-dfs", "soon": true},
+        {"order": 4, "title": "Backtracking: Permutações, Subconjuntos e Combinações", "file": "backtracking", "soon": true},
+        {"order": 5, "title": "Programação Dinâmica: da Recursão à Tabulação", "file": "dynamic-programming", "soon": true}
+      ]
     }
   ]
 }
