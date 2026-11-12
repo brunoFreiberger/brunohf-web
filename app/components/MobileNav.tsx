@@ -44,7 +44,7 @@ export default function MobileNav({
                 <DialogPrimitive.Description className="sr-only">
                     Site navigation links and controls
                 </DialogPrimitive.Description>
-                <nav className="flex flex-col gap-4">
+                <nav className="flex flex-col gap-1">
                     {links.map((link) => (
                         <Link
                             key={link.route}
@@ -52,8 +52,8 @@ export default function MobileNav({
                             onClick={() => setOpen(false)}
                             aria-current={isActive(link.route) ? "page" : undefined}
                             className={cn(
-                                "text-base font-medium",
-                                isActive(link.route) ? "text-foreground" : "text-muted-foreground"
+                                "py-2.5 text-base",
+                                isActive(link.route) ? "font-semibold text-foreground" : "text-muted-foreground hover:text-foreground"
                             )}
                         >
                             {link.label}

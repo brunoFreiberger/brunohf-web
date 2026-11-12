@@ -2,7 +2,7 @@
   "HomePage": {
     "profile": {
       "subtitle": "Dedicated Full-Stack Engineer and Problem Solver",
-      "description": "Experienced Full-Stack Developer with strong expertise in Java (Spring Boot) and JavaScript (Angular, React, Node.js). Passionate about building scalable, reliable, and customer-centric solutions that deliver real business impact.",
+      "description": "Experienced Full-Stack Developer with strong expertise in Java (Spring Boot) and JavaScript (Angular, React, Node.js), and hands-on experience in AI product development. Passionate about building scalable, reliable, and customer-centric solutions that deliver real business impact.",
       "exp_card": {
         "title": "12+ Years of Experience",
         "description": "Experienced developer with over a decade of hands-on work across diverse technologies and industries."
@@ -19,7 +19,6 @@
     "general": {
       "social_media": "Social Media",
       "tech_stack": "Tech Stack",
-      "see_recommendations": "See my recommendations",
       "download_cv": "Download CV",
       "core_strengths": "Core Strengths",
       "projects": "Featured Projects",
@@ -37,17 +36,29 @@
   },
   "Contact": {
     "contact_me": "Contact Me",
-    "description": "Send me an email, I will reply as soon as possible."
+    "description": "Send me an email, I will reply as soon as possible.",
+    "cancel": "Cancel",
+    "copy": "Copy email",
+    "copied": "Email copied to clipboard!"
   },
   "Blog": {
-    "back": "Back"
+    "back": "Back",
+    "loading": "loading",
+    "min_read": "min read",
+    "no_articles": "No articles here yet.",
+    "coming_soon": "Coming soon",
+    "load_error": "Couldn't load this page. Please try again later."
+  },
+  "NotFound": {
+    "title": "Page not found.",
+    "home": "Go home"
   },
   "AboutMe": {
     "title": "About me",
     "sections": {
       "introduction": {
         "title": "Who I am",
-        "text": "I am Bruno Henrique Freiberger, a software developer with over 12 years of experience in full-stack development. My core expertise lies in Java (Spring) and JavaScript (Angular), delivering scalable, high-quality solutions. I also have hands-on experience with a wide range of technologies and DevOps practices, contributing across the entire development lifecycle."
+        "text": "I am Bruno, a software developer with over 12 years of experience in full-stack development. My core expertise lies in Java (Spring) and JavaScript (Angular), delivering scalable, high-quality solutions. I also have hands-on experience in AI product development and with a wide range of technologies and DevOps practices, contributing across the entire development lifecycle."
       },
       "experience": {
         "title": "Professional experience",

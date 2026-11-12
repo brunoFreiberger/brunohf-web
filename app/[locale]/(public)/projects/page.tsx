@@ -2,21 +2,23 @@
 
 import {useEffect, useState} from "react";
 import {useParams} from "next/navigation";
-import {Link} from "@/i18n/navigation";
-
-export type Project = {
-    order: number, title: string, folder: string, image: string, description: string
-}
+import {useTranslations} from "use-intl";
+import {EntryLink, EntryList, Loading, PageHeader} from "@/app/components/Page";
+import {CONTENT_BASE, type Project} from "@/lib/content";
 
 export default function PortfolioPage() {
-    const [projects, setProjects] = useState<Project[]>([]);
+    const [projects, setProjects] = useState<Project[]>();
     const params = useParams<{ locale: string; }>();
+    const tNav = useTranslations('Navbar');
+    const tHome = useTranslations('HomePage');
+    const tBlog = useTranslations('Blog');
 
     useEffect(() => {
         async function loadContent() {
-            const res = await fetch(`https://raw.githubusercontent.com/brunoFreiberger/brunohf-web/main/content/projects/index/${params.locale}/index.json`);
+            const res = await fetch(`${CONTENT_BASE}/projects/index/${params.locale}/index.json`);
             const data = await res.json();
-            setProjects(data.projects);
+            const list: Project[] = data.projects ?? [];
+            setProjects([...list].sort((a, b) => a.order - b.order));
         }
 
         loadContent();
@@ -24,21 +26,23 @@ export default function PortfolioPage() {
 
     return (
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
-            <h1 className="text-3xl font-semibold tracking-tight">Portfolio</h1>
-            <div className="mt-8 flex flex-col gap-4">
-                {
-                    projects?.map((project, index: number) => (
-                        <Link
-                            key={index}
+            <PageHeader title={tNav('projects')}/>
+            {projects === undefined ? (
+                <Loading label={tBlog('loading')}/>
+            ) : projects.length === 0 ? (
+                <p className="text-sm text-muted-foreground">{tHome('general.no_projects_found')}</p>
+            ) : (
+                <EntryList className="max-w-4xl">
+                    {projects.map((project) => (
+                        <EntryLink
+                            key={project.folder}
                             href={`/projects/${project.folder}`}
-                            className="block rounded-lg border border-border p-4 transition-colors hover:bg-accent"
-                        >
-                            <h2 className="font-semibold">{project.title}</h2>
-                            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
-                        </Link>
-                    ))
-                }
-            </div>
+                            title={project.title}
+                            description={project.description}
+                        />
+                    ))}
+                </EntryList>
+            )}
         </div>
     );
 }

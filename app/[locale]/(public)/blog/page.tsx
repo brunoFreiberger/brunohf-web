@@ -3,68 +3,77 @@
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {useEffect, useState} from "react";
 import {useParams} from "next/navigation";
-import {Separator} from "@/components/ui/separator";
-import {Link} from "@/i18n/navigation";
-
-export type Article = {
-   title: string, description: string, file: string, min: number, date: string
-}
-
-export type Topic = {
-    order: number, title: string, folder: string, articles: Article[]
-}
+import {useTranslations} from "use-intl";
+import {EntryLink, EntryList, EntrySoon, Loading, PageHeader} from "@/app/components/Page";
+import {articleMeta, CONTENT_BASE, type Topic} from "@/lib/content";
 
 export default function BlogPage() {
-    const [topics, setTopics] = useState<Topic[]>([]);
+    const [topics, setTopics] = useState<Topic[]>();
+    const [tab, setTab] = useState<string>();
     const params = useParams<{ locale: string; }>();
+    const t = useTranslations('Blog');
 
     useEffect(() => {
         async function loadContent() {
-            const res = await fetch(`https://raw.githubusercontent.com/brunoFreiberger/brunohf-web/main/content/articles/index/${params.locale}/index.json`);
+            const res = await fetch(`${CONTENT_BASE}/articles/index/${params.locale}/index.json`);
             const data = await res.json();
-            setTopics(data.topics);
+            const list: Topic[] = data.topics ?? [];
+            setTopics([...list].sort((a, b) => a.order - b.order));
         }
         loadContent();
     }, [params.locale])
+
     return (
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
-            <h1 className="text-3xl font-semibold tracking-tight">Blog</h1>
-            <Tabs defaultValue="development" orientation="vertical" className="mt-8 flex-col items-start gap-8 lg:flex-row">
-                <TabsList className="h-fit w-full shrink-0 flex-col items-stretch justify-start gap-1 bg-transparent p-0 lg:w-48">
-                    {topics.map((item, index: number) => {
-                        return <TabsTrigger key={index} value={item.folder} className="w-full justify-start">{item.title}</TabsTrigger>
-                    })}
-                </TabsList>
-                <div className="w-full min-w-0 flex-1">
-                    {
-                        topics.map((topic, index: number) => {
-                            return (
-                                <TabsContent className="w-full" key={index} value={topic.folder}>
-                                    {
-                                        topic.articles && topic.articles.length > 0 ?
-                                            (topic.articles.map((article: Article, index: number) => {
-                                                return (
-                                                    <Link key={index} href={`/blog/${topic.folder}/${article.file}`} className="block">
-                                                        <div className="flex w-full flex-col gap-2 py-6">
-                                                            <span
-                                                                className="text-xl font-semibold hover:text-brand md:text-2xl lg:text-3xl">{article.title}</span>
-                                                            <span
-                                                                className="text-muted-foreground">{article.description}</span>
-                                                            <span
-                                                                className="text-xs text-muted-foreground">{article.date} - {article.min} min. read</span>
-                                                        </div>
-                                                        <Separator/>
-                                                    </Link>
-                                                )
-                                            })) :
-                                            <div className="py-6 text-sm text-muted-foreground">No articles found</div>
-                                    }
-                                </TabsContent>
-                            )
-                        })
-                    }
-                </div>
-            </Tabs>
+            <PageHeader title="Blog"/>
+            {topics === undefined ? (
+                <Loading label={t('loading')}/>
+            ) : (
+                // Opens on the first topic; no topic name is hardcoded.
+                <Tabs value={tab ?? topics[0]?.folder} onValueChange={setTab} orientation="vertical"
+                      className="flex-col items-start gap-8 lg:flex-row lg:gap-16">
+                    {/* Topics wrap on phones and stack in a sidebar on desktop. */}
+                    <TabsList className="w-full shrink-0 flex-wrap justify-start lg:w-52 lg:flex-col lg:items-stretch">
+                        {topics.map((topic) => (
+                            <TabsTrigger key={topic.folder} value={topic.folder} className="lg:justify-between">
+                                {topic.title}
+                                <span className="text-xs opacity-70">({topic.articles?.length ?? 0})</span>
+                            </TabsTrigger>
+                        ))}
+                    </TabsList>
+                    <div className="w-full min-w-0 flex-1">
+                        {topics.map((topic) => (
+                            <TabsContent key={topic.folder} value={topic.folder}>
+                                {topic.articles && topic.articles.length > 0 ? (
+                                    <EntryList>
+                                        {/* Published posts first, then the planned ones. */}
+                                        {[...topic.articles].sort((a, b) => Number(!!a.soon) - Number(!!b.soon)).map((article) =>
+                                            article.soon ? (
+                                                <EntrySoon
+                                                    key={article.file}
+                                                    title={article.title}
+                                                    description={article.description}
+                                                    label={t('coming_soon')}
+                                                />
+                                            ) : (
+                                                <EntryLink
+                                                    key={article.file}
+                                                    href={`/blog/${topic.folder}/${article.file}`}
+                                                    title={article.title}
+                                                    description={article.description}
+                                                    meta={articleMeta(article, params.locale, t('min_read'))}
+                                                />
+                                            )
+                                        )}
+                                    </EntryList>
+                                ) : (
+                                    <p className="text-sm text-muted-foreground">{t('no_articles')}</p>
+                                )}
+                            </TabsContent>
+                        ))}
+                    </div>
+                </Tabs>
+            )}
         </div>
     );
 }
