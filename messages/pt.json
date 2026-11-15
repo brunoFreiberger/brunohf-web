@@ -58,58 +58,122 @@
     "sections": {
       "introduction": {
         "title": "Quem sou eu",
-        "text": "Sou Bruno, desenvolvedor de software com mais de 12 anos de experiência em projetos full-stack. Tenho foco principal em Java (Spring) e JavaScript (Angular), atuando no desenvolvimento de soluções robustas, escaláveis e voltadas para performance. Também possuo vivência no desenvolvimento de produtos com IA, além de diversas outras tecnologias e práticas de DevOps, contribuindo de ponta a ponta no ciclo de desenvolvimento."
+        "paragraphs": [
+          "Sou Engenheiro de Software Sênior, com mais de 12 anos de experiência no desenvolvimento, manutenção e evolução de aplicações empresariais. Minha principal especialização é Java e Spring Boot, com atuação em desenvolvimento backend e full stack.",
+          "Ao longo da minha carreira, trabalhei com sistemas dos setores de seguros, saúde, agronegócio e construção civil, contribuindo para o desenvolvimento de funcionalidades, integrações entre sistemas, otimização de desempenho e modernização de aplicações legadas.",
+          "Minha experiência inclui otimização de consultas, monitoramento de problemas em produção e participação em uma migração de Oracle para MongoDB. Também atuei em um sistema de agendamento de consultas médicas com um volume de 5 milhões de consultas e no desenvolvimento de soluções que facilitam o acesso a informações por usuários sem conhecimento técnico."
+        ],
+        "expertise": {
+          "title": "Principais competências técnicas",
+          "items": [
+            {"area": "Backend", "skills": "Java, Spring Boot, Spring MVC, Spring Data, APIs REST, microsserviços e integrações."},
+            {"area": "Frontend", "skills": "Angular, React, TypeScript e JavaScript."},
+            {"area": "Bancos de dados", "skills": "SQL, Oracle e MongoDB."},
+            {"area": "Engenharia de software", "skills": "Docker, CI/CD, otimização de desempenho, refatoração e desenvolvimento de soluções sustentáveis."}
+          ]
+        },
+        "closing": "Tenho interesse em resolver problemas técnicos complexos, melhorar sistemas existentes e colaborar com equipes multidisciplinares para desenvolver softwares confiáveis e alinhados às necessidades do negócio."
       },
       "experience": {
         "title": "Experiência profissional",
+        "highlights_title": "Principais contribuições",
+        "technologies_title": "Tecnologias",
         "items": [
           {
             "company": "Meta",
-            "role": "Software Engineer",
+            "role": "Senior Software Engineer",
             "period": "maio de 2023 - presente",
-            "description": "Atuação no desenvolvimento e manutenção de soluções corporativas, trabalhando com boas práticas de engenharia de software, arquitetura e colaboração entre equipes."
+            "description": "Atuação no desenvolvimento e evolução de uma plataforma empresarial de seguros automotivos.",
+            "highlights": [
+              "Desenvolvimento e manutenção de funcionalidades que apoiam as operações de negócio no setor de seguros.",
+              "Análise e otimização de consultas ao banco de dados para melhorar o desempenho da aplicação.",
+              "Monitoramento de erros e investigação de problemas em produção para contribuir com a confiabilidade do sistema.",
+              "Participação na migração de Oracle para MongoDB, contribuindo para a evolução da arquitetura de dados da aplicação.",
+              "Colaboração com a equipe de desenvolvimento na manutenção da aplicação e implementação de melhorias técnicas."
+            ],
+            "technologies": "Java (8, 17, 21), Spring Boot, Angular, TypeScript, Oracle, MongoDB, Datadog, Jenkins, SonarQube, RabbitMQ e Checkmarx."
           },
           {
             "company": "Qualirede",
-            "role": "Software Engineer",
+            "role": "Senior Software Engineer",
             "period": "janeiro de 2023 - maio de 2023",
-            "description": "Contribuição no desenvolvimento de funcionalidades e melhorias em sistemas voltados para gestão de saúde."
+            "description": "Atuação no desenvolvimento e manutenção de soluções de software para o setor da saúde.",
+            "highlights": [
+              "Desenvolvimento de soluções de software para atender às necessidades de negócio do setor da saúde.",
+              "Participação na análise de requisitos e estimativa de tarefas de desenvolvimento.",
+              "Manutenção e evolução de aplicações legadas, corrigindo problemas técnicos e aprimorando funcionalidades existentes."
+            ],
+            "technologies": "Java, Spring Boot, Angular, Firestore, PostgreSQL e Keycloak."
           },
           {
             "company": "Pulsati",
             "role": "Senior Software Engineer",
             "period": "maio de 2021 - dezembro de 2022",
-            "description": "Desenvolvimento de soluções para operadoras de planos de saúde, com foco em estabilidade, escalabilidade e evolução contínua do produto."
+            "description": "Atuação no desenvolvimento e evolução de uma plataforma de agendamentos na área da saúde, voltada às operações de planos de saúde e à gestão de consultas médicas.",
+            "highlights": [
+              "Desenvolvimento e manutenção de funcionalidades para agendamento de consultas médicas.",
+              "Participação na gestão e evolução de um sistema com aproximadamente 5 milhões de consultas médicas.",
+              "Manutenção e implementação de melhorias contínuas na plataforma de agendamentos."
+            ],
+            "technologies": "Java, Go (Golang), Angular e MongoDB."
           },
           {
-            "company": "Supero Tecnologia",
+            "company": "Supero Tecnologia com Inteligência",
             "role": "Senior Software Developer",
             "period": "abril de 2020 - maio de 2021",
-            "description": "Atuação terceirizada na Philips Clinical Informatics. Desenvolvi funcionalidades como um Query Builder em Java e Oracle, permitindo que profissionais de saúde criassem consultas de forma visual, sem necessidade de conhecimento em SQL."
+            "description": "Atuação em projetos de software empresarial para a Philips Clinical Informatics, contribuindo para o desenvolvimento de sistemas de informação hospitalar.",
+            "highlights": [
+              "Desenvolvimento de um Query Builder utilizando Java e Oracle, permitindo que profissionais de saúde criassem visualizações personalizadas de dados sem necessidade de conhecimentos técnicos.",
+              "Desenvolvimento de soluções de software para apoiar operações hospitalares e facilitar o acesso a informações clínicas.",
+              "Implementação de funcionalidades envolvendo consultas a bancos de dados e apresentação de informações."
+            ],
+            "technologies": "Java, Oracle Database, JavaScript e Qlik Sense."
           },
           {
             "company": "Senior Sistemas",
             "role": "Senior Full Stack Developer",
             "period": "setembro de 2019 - março de 2020",
-            "description": "Criação e evolução de funcionalidades em software voltado ao agronegócio, garantindo qualidade e manutenção contínua."
+            "description": "Atuação no desenvolvimento e manutenção de uma solução de software empresarial para o setor do agronegócio na Senior Sistemas.",
+            "highlights": [
+              "Desenvolvimento de novas funcionalidades para apoiar as operações de negócio do setor do agronegócio.",
+              "Investigação e correção de problemas de software, contribuindo para a estabilidade da aplicação.",
+              "Manutenção e evolução de funcionalidades existentes, de acordo com os requisitos de negócio."
+            ],
+            "technologies": "Java, Spring Boot, Angular, PostgreSQL e Jasper Reports."
           },
           {
-            "company": "AMcom",
+            "company": "AMcom Sistemas de Informação",
             "role": "Senior Full Stack Developer",
             "period": "julho de 2017 - setembro de 2019",
-            "description": "Atuação em fábrica de software e outsourcing, contribuindo em projetos para clientes como Philips, Senior Sistemas, FIESC e Lincros."
+            "description": "Atuação como desenvolvedor Full Stack em projetos de desenvolvimento de software e outsourcing para diferentes clientes da AMcom, contribuindo para soluções empresariais de organizações como Philips, Senior Sistemas, FIESC e Lincros.",
+            "highlights": [
+              "Participação em projetos de desenvolvimento de software para diferentes setores de negócio e ambientes tecnológicos.",
+              "Desenvolvimento de aplicações empresariais em colaboração com equipes responsáveis pela entrega de soluções de software."
+            ],
+            "technologies": "Java, Spring Boot, Angular, Oracle, PostgreSQL, JUnit, C#, Ionic, Swagger e JSF."
           },
           {
-            "company": "Windi Soluções",
+            "company": "Windi Soluções em Sistemas",
             "role": "Full Stack Developer",
             "period": "março de 2017 - julho de 2017",
-            "description": "Implementação de melhorias e novas funcionalidades no sistema de gestão de lojas de veículos Altimus."
+            "description": "Atuação no desenvolvimento e manutenção do Altimus, uma plataforma de software para gestão de lojas e concessionárias de veículos.",
+            "highlights": [
+              "Implementação de novas funcionalidades para apoiar as operações de gestão de lojas de veículos.",
+              "Investigação e correção de problemas na aplicação, garantindo a manutenção das funcionalidades existentes.",
+              "Participação na manutenção e melhoria contínua da plataforma."
+            ],
+            "technologies": "Java, Adobe Flex, CSS e Jasper Reports."
           },
           {
             "company": "Teclógica",
             "role": "Full Stack Developer",
             "period": "março de 2014 - dezembro de 2016",
-            "description": "Desenvolvimento e manutenção do sistema MOBUSS Construção, utilizado no setor de construção civil."
+            "description": "Atuação no desenvolvimento e manutenção do MOBUSS Construção, uma solução de software empresarial voltada ao setor da construção civil.",
+            "highlights": [
+              "Desenvolvimento e manutenção de funcionalidades para apoiar os processos de negócio da construção civil.",
+              "Implementação de melhorias e participação na evolução das funcionalidades existentes da aplicação."
+            ],
+            "technologies": "Java, JSF, PrimeFaces, Android, AngularJS e PostgreSQL."
           }
         ]
       },
