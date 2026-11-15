@@ -5,7 +5,7 @@
       "title": "Desenvolvimento",
       "folder": "development",
       "articles": [
-        {"order": 0, "title": "SOLID", "file": "solid", "description": "Princípios SOLID"},
+        {"order": 0, "title": "SOLID", "file": "solid", "description": "Princípios SOLID", "soon": true},
         {"order": 1, "title": "Concorrência em Java: Threads, Executors e Virtual Threads", "file": "java-concurrency", "soon": true},
         {"order": 2, "title": "Projetando APIs REST que Duram", "file": "rest-api-design", "soon": true},
         {"order": 3, "title": "Observabilidade na Prática: Logs, Métricas e Traces", "file": "observability", "soon": true}
