@@ -58,58 +58,122 @@
     "sections": {
       "introduction": {
         "title": "Who I am",
-        "text": "I am Bruno, a software developer with over 12 years of experience in full-stack development. My core expertise lies in Java (Spring) and JavaScript (Angular), delivering scalable, high-quality solutions. I also have hands-on experience in AI product development and with a wide range of technologies and DevOps practices, contributing across the entire development lifecycle."
+        "paragraphs": [
+          "I'm a Senior Software Engineer with 12+ years of experience developing, maintaining, and evolving enterprise applications. My core specialization is Java and Spring Boot, with experience across backend and full-stack development.",
+          "Throughout my career, I've worked on software for insurance, healthcare, agribusiness, and construction, contributing to new features, system integrations, performance improvements, and legacy application modernization.",
+          "My experience includes query optimization, production issue monitoring, and participation in an Oracle-to-MongoDB migration. I've also worked on healthcare scheduling software involving 5 million medical appointments and developed solutions that make complex business data more accessible to non-technical users."
+        ],
+        "expertise": {
+          "title": "Technical expertise",
+          "items": [
+            {"area": "Backend", "skills": "Java, Spring Boot, Spring MVC, Spring Data, REST APIs, microservices, and system integrations."},
+            {"area": "Frontend", "skills": "Angular, React, TypeScript, and JavaScript."},
+            {"area": "Databases", "skills": "SQL, Oracle, and MongoDB."},
+            {"area": "Engineering practices", "skills": "Docker, CI/CD, performance optimization, refactoring, and maintainable software design."}
+          ]
+        },
+        "closing": "I enjoy solving complex technical challenges, improving existing systems, and collaborating with cross-functional teams to deliver reliable software that supports real business needs."
       },
       "experience": {
         "title": "Professional experience",
+        "highlights_title": "Key contributions",
+        "technologies_title": "Technologies",
         "items": [
           {
             "company": "Meta",
-            "role": "Software Engineer",
+            "role": "Senior Software Engineer",
             "period": "May 2023 - Present",
-            "description": "Development and maintenance of enterprise solutions, applying software engineering best practices, modern architecture and cross-team collaboration."
+            "description": "Working on the development and evolution of an enterprise vehicle insurance platform.",
+            "highlights": [
+              "Develop and maintain application features supporting business operations in the insurance domain.",
+              "Analyze and optimize database queries to improve application performance.",
+              "Monitor application errors and investigate production issues to support system reliability.",
+              "Participate in the migration from Oracle to MongoDB, contributing to the evolution of the application's data architecture.",
+              "Collaborate with the development team on application maintenance and technical improvements."
+            ],
+            "technologies": "Java (8, 17, 21), Spring Boot, Angular, TypeScript, Oracle, MongoDB, Datadog, Jenkins, SonarQube, RabbitMQ, Checkmarx."
           },
           {
             "company": "Qualirede",
-            "role": "Software Engineer",
+            "role": "Senior Software Engineer",
             "period": "January 2023 - May 2023",
-            "description": "Contributed to the enhancement and development of systems focused on healthcare management."
+            "description": "Worked on the development and maintenance of software solutions for the healthcare sector.",
+            "highlights": [
+              "Developed software solutions to support healthcare business requirements.",
+              "Participated in the analysis and estimation of development tasks.",
+              "Maintained and enhanced legacy applications, addressing technical issues and evolving existing functionality."
+            ],
+            "technologies": "Java, Spring Boot, Angular, Firestore, PostgreSQL, Keycloak."
           },
           {
             "company": "Pulsati",
             "role": "Senior Software Engineer",
             "period": "May 2021 - December 2022",
-            "description": "Developed healthcare solutions for insurance providers, focusing on product evolution, reliability and performance."
+            "description": "Worked on the development and evolution of a healthcare scheduling platform supporting health plan operations and medical appointment management.",
+            "highlights": [
+              "Developed and maintained software features for medical appointment scheduling.",
+              "Contributed to the management and evolution of a system involving approximately 5 million medical appointments.",
+              "Supported the maintenance and continuous improvement of the scheduling platform."
+            ],
+            "technologies": "Java, Golang, Angular, MongoDB."
           },
           {
-            "company": "Supero Tecnologia",
+            "company": "Supero Tecnologia com Inteligência",
             "role": "Senior Software Developer",
             "period": "April 2020 - May 2021",
-            "description": "Worked outsourced at Philips Clinical Informatics. Developed features such as a visual Query Builder in Java and Oracle, enabling healthcare professionals to build queries without SQL knowledge."
+            "description": "Worked on enterprise healthcare software projects for Philips Clinical Informatics, contributing to the development of hospital information systems.",
+            "highlights": [
+              "Developed a Query Builder using Java and Oracle, enabling healthcare professionals to create customizable data visualizations without requiring technical knowledge.",
+              "Contributed to the development of software solutions supporting hospital operations and access to clinical information.",
+              "Worked on application functionality involving database queries and data presentation."
+            ],
+            "technologies": "Java, Oracle Database, JavaScript, Qlik Sense."
           },
           {
             "company": "Senior Sistemas",
             "role": "Senior Full Stack Developer",
             "period": "September 2019 - March 2020",
-            "description": "Developed and enhanced features in agribusiness software, ensuring quality and continuous improvement."
+            "description": "Worked on the development and maintenance of an enterprise software solution for the agribusiness sector at Senior Sistemas.",
+            "highlights": [
+              "Developed new application features to support agribusiness operations.",
+              "Investigated and resolved software defects, contributing to application stability.",
+              "Maintained and enhanced existing functionality according to business requirements."
+            ],
+            "technologies": "Java, Spring Boot, Angular, PostgreSQL, Jasper Reports."
           },
           {
-            "company": "AMcom",
+            "company": "AMcom Sistemas de Informação",
             "role": "Senior Full Stack Developer",
             "period": "July 2017 - September 2019",
-            "description": "Worked in a software factory and on outsourcing projects for clients such as Philips, Senior Sistemas, FIESC and Lincros."
+            "description": "Worked as a Full Stack Developer in software development and client outsourcing projects at AMcom, contributing to enterprise solutions for organizations including Philips, Senior Sistemas, FIESC, and Lincros.",
+            "highlights": [
+              "Contributed to software development projects across different business domains and client environments.",
+              "Worked on enterprise application development as part of software delivery teams."
+            ],
+            "technologies": "Java, Spring Boot, Angular, Oracle, PostgreSQL, JUnit, C#, Ionic, Swagger, JSF."
           },
           {
-            "company": "Windi Soluções",
+            "company": "Windi Soluções em Sistemas",
             "role": "Full Stack Developer",
             "period": "March 2017 - July 2017",
-            "description": "Implemented new features and system improvements in the Altimus vehicle dealership management platform."
+            "description": "Worked on the development and maintenance of Altimus, a software platform for vehicle dealership management.",
+            "highlights": [
+              "Implemented new features supporting vehicle dealership management operations.",
+              "Investigated and fixed application defects to maintain existing functionality.",
+              "Contributed to the ongoing maintenance and improvement of the platform."
+            ],
+            "technologies": "Java, Adobe Flex, CSS, Jasper Reports."
           },
           {
             "company": "Teclógica",
             "role": "Full Stack Developer",
             "period": "March 2014 - December 2016",
-            "description": "Developed and maintained MOBUSS Construção, a construction management system used across the civil construction sector."
+            "description": "Worked on the development and maintenance of MOBUSS Construção, an enterprise software solution for the construction industry.",
+            "highlights": [
+              "Developed and maintained application features supporting construction business processes.",
+              "Implemented software improvements and contributed to the evolution of existing functionality."
+            ],
+            "technologies": "Java, JSF, PrimeFaces, Android, AngularJS, PostgreSQL."
           }
         ]
       },

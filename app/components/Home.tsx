@@ -6,7 +6,7 @@ import {useParams} from "next/navigation";
 import {useEffect, useState} from "react";
 import {useTranslations} from "use-intl";
 import {ArrowUpRight, CodeXml, Handshake, Puzzle} from "lucide-react";
-import {EntryLink, EntryList, SectionLabel} from "@/app/components/Page";
+import {EntryLink, EntryList, EntrySoon, SectionLabel} from "@/app/components/Page";
 import {type Article, articleMeta, CONTENT_BASE, type Project, type Topic} from "@/lib/content";
 import {cn} from "@/lib/utils";
 
@@ -44,11 +44,16 @@ export default function Home({showProjects}: { showProjects: boolean }) {
             const res = await fetch(`${CONTENT_BASE}/articles/index/${params.locale}/index.json`);
             const data = await res.json();
             const topics: Topic[] = data.topics ?? [];
-            const posts: LatestPost[] = topics.flatMap((topic) =>
-                (topic.articles ?? []).filter((article) => !article.soon).map((article) => ({...article, topicFolder: topic.folder}))
+            const byOrder = (a: { order?: number }, b: { order?: number }) => (a.order ?? 0) - (b.order ?? 0);
+            // Same order as the Blog page: topics, then each topic's posts.
+            const posts: LatestPost[] = [...topics].sort(byOrder).flatMap((topic) =>
+                [...(topic.articles ?? [])].sort(byOrder).map((article) => ({...article, topicFolder: topic.folder}))
             );
-            const latest = [...posts].sort((a, b) => new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime());
-            setLatestPosts(latest.slice(0, 3));
+            // Newest published posts first; planned ones fill the remaining slots.
+            const published = posts.filter((post) => !post.soon)
+                .sort((a, b) => new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime());
+            const planned = posts.filter((post) => post.soon);
+            setLatestPosts([...published, ...planned].slice(0, 5));
         }
         loadPosts();
     }, [params.locale]);
@@ -159,15 +164,24 @@ export default function Home({showProjects}: { showProjects: boolean }) {
                 </div>
                 {latestPosts.length > 0 ? (
                     <EntryList className="mt-4">
-                        {latestPosts.map((post) => (
-                            <EntryLink
-                                key={`${post.topicFolder}/${post.file}`}
-                                href={`/blog/${post.topicFolder}/${post.file}`}
-                                title={post.title}
-                                description={post.description}
-                                meta={articleMeta(post, params.locale, tBlog('min_read'))}
-                            />
-                        ))}
+                        {latestPosts.map((post) =>
+                            post.soon ? (
+                                <EntrySoon
+                                    key={`${post.topicFolder}/${post.file}`}
+                                    title={post.title}
+                                    description={post.description}
+                                    label={tBlog('coming_soon')}
+                                />
+                            ) : (
+                                <EntryLink
+                                    key={`${post.topicFolder}/${post.file}`}
+                                    href={`/blog/${post.topicFolder}/${post.file}`}
+                                    title={post.title}
+                                    description={post.description}
+                                    meta={articleMeta(post, params.locale, tBlog('min_read'))}
+                                />
+                            )
+                        )}
                     </EntryList>
                 ) : (
                     <p className="mt-4 text-sm text-muted-foreground">{t('general.no_posts_found')}</p>

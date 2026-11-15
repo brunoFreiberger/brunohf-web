@@ -1,5 +1,1 @@
-test blog
-## test comment
-
-*x*
-
+# SOLID
