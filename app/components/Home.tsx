@@ -74,7 +74,7 @@ export default function Home({showProjects}: { showProjects: boolean }) {
                 </p>
                 <p className="mt-6 max-w-2xl leading-relaxed">{t('profile.description')}</p>
                 <Button asChild className="mt-8">
-                    <a href="/cv.pdf" download="Bruno-Henrique-Freiberger-CV.pdf">
+                    <a href={`/api/resumes/${params.locale}`} download>
                         {t('general.download_cv')}
                     </a>
                 </Button>

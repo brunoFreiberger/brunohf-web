@@ -2,7 +2,9 @@ import type { NextConfig } from "next";
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  outputFileTracingIncludes: {
+    '/api/resumes/*': ['./content/resumes/**/*.pdf'],
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();
