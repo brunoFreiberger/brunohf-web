@@ -66,35 +66,7 @@ export default function Home({showProjects}: { showProjects: boolean }) {
 
     return (
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-16 gap-y-14 px-4 py-10 sm:px-6 lg:grid-cols-[260px_1fr] lg:px-8 lg:py-16">
-            {/* Source order is the phone order (intro first); on desktop the profile sits in the left column. */}
-            <section className="lg:col-start-2 lg:row-start-1">
-                <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Full-Stack Engineer</h1>
-                <p className="mt-3 text-sm text-muted-foreground">
-                    Java · Spring Boot · JavaScript · React · Next.js · Node · Angular
-                </p>
-                <p className="mt-6 max-w-2xl leading-relaxed">{t('profile.description')}</p>
-                <Button asChild className="mt-8">
-                    <a href={`/api/resumes/${params.locale}`} download>
-                        {t('general.download_cv')}
-                    </a>
-                </Button>
-
-                <section className="mt-14">
-                    <SectionLabel>{t('general.core_strengths')}</SectionLabel>
-                    <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-3">
-                        {strengths.map((strength) => (
-                            <li key={strength.title}>
-                                <h3 className="flex gap-2 font-semibold">
-                                    <strength.icon aria-hidden className="mt-1 size-4 shrink-0 text-muted-foreground"/>
-                                    {strength.title}
-                                </h3>
-                                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{strength.description}</p>
-                            </li>
-                        ))}
-                    </ul>
-                </section>
-            </section>
-
+            {/* Profile comes first on mobile; the desktop grid places it in the left column. */}
             <aside className={cn("lg:sticky lg:top-24 lg:col-start-1 lg:row-start-1 lg:self-start", showProjects ? "lg:row-span-3" : "lg:row-span-2")}>
                 <Avatar className="size-24 rounded-[4px]">
                     <AvatarImage src="/images/profile.webp" alt="Bruno Henrique Freiberger"/>
@@ -129,6 +101,34 @@ export default function Home({showProjects}: { showProjects: boolean }) {
                     </ul>
                 </section>
             </aside>
+
+            <section className="lg:col-start-2 lg:row-start-1">
+                <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Full-Stack Engineer</h1>
+                <p className="mt-3 text-sm text-muted-foreground">
+                    Java · Spring Boot · JavaScript · React · Next.js · Node · Angular
+                </p>
+                <p className="mt-6 max-w-2xl leading-relaxed">{t('profile.description')}</p>
+                <Button asChild className="mt-8">
+                    <a href={`/api/resumes/${params.locale}`} download>
+                        {t('general.download_cv')}
+                    </a>
+                </Button>
+
+                <section className="mt-14">
+                    <SectionLabel>{t('general.core_strengths')}</SectionLabel>
+                    <ul className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-3">
+                        {strengths.map((strength) => (
+                            <li key={strength.title}>
+                                <h3 className="flex gap-2 font-semibold">
+                                    <strength.icon aria-hidden className="mt-1 size-4 shrink-0 text-muted-foreground"/>
+                                    {strength.title}
+                                </h3>
+                                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{strength.description}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            </section>
 
             {showProjects && (
                 <section className="lg:col-start-2 lg:row-start-2">
